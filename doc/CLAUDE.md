@@ -196,7 +196,7 @@ make get-db
 
 ## Contextos Delimitados (DDD Estratégico)
 
-Consulte `.claude/rules/3_bounded_contexts.md` para o mapeamento completo de contextos.
+Consulte `.claude/rules/2_bounded_contexts.md` para o mapeamento completo de contextos.
 
 Princípios a respeitar:
 - **Encapsulamento entre módulos:** testes de um módulo não devem depender de lógica de negócio interna de outro módulo.
@@ -211,8 +211,8 @@ Princípios a respeitar:
 | Arquivo | Conteúdo |
 |---|---|
 | `.claude/rules/1_glossary.md` | Glossário da linguagem ubíqua do domínio APS/PEC — base para nomes de classes, métodos, variáveis e testes |
-| `.claude/rules/2_subdomains.md` | Classificação estratégica dos subdomínios (principal/suporte/genérico) e guia de padrões táticos DDD |
-| `.claude/rules/3_bounded_contexts.md` | Fronteiras entre contextos delimitados, topologia das equipes e regras de encapsulamento |
+| `.claude/rules/2_bounded_contexts.md` | Fronteiras entre contextos delimitados, topologia das equipes e regras de encapsulamento |
+| `.claude/rules/3_subdomains.md` | Classificação estratégica dos subdomínios (principal/suporte/genérico) e orientação para adoção de padrões táticos de DDD |
 | `.claude/rules/4_unit_tests_guidelines.md` | Padrões obrigatórios para testes unitários |
 | `.claude/rules/5_integration_tests_guidelines.md` | Padrões obrigatórios para testes de integração |
 | `.claude/rules/6_presentation_tests_guidelines.md` | Padrões para testes de Cubit e State na camada de apresentação |

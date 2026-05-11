@@ -3,234 +3,98 @@
 > **Finalidade:** Este glossário define os termos e siglas do domínio da Atenção Primária à Saúde (APS) utilizados no aplicativo e-SUS Atendimento. Serve como referência canônica para garantir alinhamento entre código, testes, documentação e comunicação entre membros das equipes envolvidas (Linguagem Ubíqua — DDD).
 >
 > **Instrução para o Agente de IA:** Ao nomear classes, métodos, variáveis, módulos e testes, utilize **exatamente** os termos definidos neste glossário. Nunca adote jargões técnicos da indústria ou invente termos ambíguos, sinônimos ou abreviações não listadas aqui.
+>
+> **Nota sobre a coluna "Contexto Delimitado":** A linguagem ubíqua é delimitada (*bounded*) — um mesmo termo pode ter significados distintos em partes do sistema diferentes - contextos diferentes. Quando isso ocorre, o termo aparece em mais de uma linha, uma por BC. Ao nomear artefatos, sempre verifique em qual BC você está operando antes de escolher o conceito correto. Consulte `.claude/rules/2_bounded_contexts.md` para o mapeamento completo de contextos.
 
 ---
 
 ## A
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **AAS** | Agente de Ação Social | — |
-| **AB** | Atenção Básica | — |
-| **ACE** | Agente de Combate às Endemias | — |
-| **ACS** | Agente Comunitário de Saúde | — |
-| **AD** | Atenção Domiciliar | — |
-| **Aprazar** | Marcar (tempo ou prazo) para realização de alguma coisa. | No PEC, o aprazamento é um dado de vacinação: aprazar uma vacina significa marcar uma data futura para sua aplicação. |
-| **APS** | Atenção Primária à Saúde | — |
-| **Área** | Conjunto de microáreas sob a responsabilidade de uma equipe de saúde. Na ESF: até 12 microáreas contíguas, com até 4.000 pessoas. Na EACS: microáreas cobertas por uma equipe (01 instrutor/supervisor + até 30 ACS), nem sempre contíguas. | — |
-| **ASB** | Auxiliar de Saúde Bucal | — |
-
----
-
-## B
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **BPA** | Boletim de Produção Ambulatorial | — |
+| **ACS** | Autenticação / Seleção de Lotação | Agente Comunitário de Saúde. Categoria de profissional que pode estar associada a uma lotação |
+| **Atendimento** | Documentação Clínica | Registro clínico de um profissional com um cidadão, com estado (rascunho / finalizado), associando SOAP, Folha de Rosto e Dados Pessoais. Armazenado no dispositivo até a sincronização com o PEC |
+| **Atendimento** | Sincronização | Unidade de produção enviada ao PEC: uma FAI ou FP gerada a partir do registro clínico |
 
 ---
 
 ## C
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **CADSUS** | Sistema de Cadastramento de usuários do SUS | — |
-| **CAEQ** | Coordenação do Acesso e Equidade | — |
-| **CBIS** | Congresso Brasileiro de Informática em Saúde | — |
-| **CBO** | Classificação Brasileira de Ocupações — trata das ocupações no mercado de trabalho brasileiro | — |
-| **CDS** | Cadastro de Dados Simplificado — sistema de transição/contingência que apoia a coleta de dados por fichas e digitação. Adequado para UBS sem informatização ou com indisponibilidade temporária. | É um dos componentes da estratégia e-SUS AB. |
-| **Certificado Digital** | Arquivo eletrônico que funciona como identidade virtual (PF ou PJ), permitindo transações online com autenticidade e proteção das informações. | — |
-| **CES** | Conselho Estadual de Saúde | — |
-| **CGAN** | Coordenação Geral de Alimentação e Nutrição | — |
-| **CGIAD** | Coordenação-Geral de Inovação e Aceleração Digital — coordenação à qual o GT e-SUS pertence | — |
-| **CIAP / CIAP-2** | Segunda Edição da Classificação Internacional de Atenção Primária. Classifica questões relacionadas às pessoas (não a doenças) e motivos de consulta seguindo a sistematização SOAP. | No PEC, é utilizado por profissionais de nível superior (enfermeiros, médicos) durante atendimentos, como parte do SOAP. |
-| **CIB** | Comissão Intergestores Bipartite: governo estadual e municipal | — |
-| **CID / CID-10** | Classificação Internacional de Doenças e Problemas Relacionados à Saúde (OMS) — padroniza a codificação de doenças. | No PEC, é utilizado pelo perfil de médico ou dentista durante atendimentos, como parte do SOAP. |
-| **CIR** | Comissão Intergestores Regional | — |
-| **CIT** | Comissão Intergestores Tripartite: governo federal, estados e municípios | — |
-| **CMS** | Conselho Municipal de Saúde | — |
-| **CNES** | Cadastro Nacional de Estabelecimentos de Saúde — contém informações sobre equipes, profissionais e unidades de saúde (infraestrutura, leitos, tipo de atendimento, etc.) | — |
-| **CnR** | Consultório na Rua | — |
-| **CNS** | Conselho Nacional de Saúde **ou** Cartão Nacional de Saúde (documento de identificação do usuário do SUS). Cartões iniciados por **7** são definitivos; por **8** são de treinamento. | Dado de identificação do cidadão e dos profissionais. |
-| **CONASEMS** | Conselho Nacional de Secretarias Municipais de Saúde | — |
-| **CONASS** | Conselho Nacional de Secretarias de Saúde | — |
-| **COSEMS** | Conselho de Secretarias Municipais de Saúde (âmbito estadual) | — |
-| **CPF** | Cadastro de Pessoas Físicas — registro mantido pela Receita Federal | Dado de identificação do cidadão e dos profissionais. |
-| **Cras** | Centro de Referência de Assistência Social | — |
-| **CSV** | Comma Separated Values — formato de arquivo com campos separados por vírgula | Formato padrão de exportação de Relatórios Consolidados e eventos de Auditoria. |
+| **CBO** | Autenticação / Seleção de Lotação | Classificação Brasileira de Ocupações. Associada à lotação do profissional; determina quais tipos de atendimento ele pode registrar |
+| **CIAP-2** | Documentação Clínica — SOAP | Classificação Internacional de Atenção Primária, 2ª edição. Codifica motivos de consulta e problemas; usado em intervenções e avaliações durante o registro do SOAP |
+| **CID-10** | Documentação Clínica — SOAP | Classificação Internacional de Doenças. Codifica diagnósticos médicos e odontológicos; utilizado por médicos e dentistas ao registrar problemas/condições no SOAP |
+| **Cidadão** | Documentação Clínica / Identificação | Pessoa que recebe o atendimento domiciliar. Pode ter dados oriundos do PEC ou ser cadastrada manualmente pelo profissional |
+| **CNS** | Identificação / Documentação Clínica | Cartão Nacional de Saúde. Identificador alternativo ao CPF; cartões iniciados por **7** são definitivos, por **8** são de treinamento |
+| **CPF** | Identificação / Documentação Clínica | Cadastro de Pessoas Físicas. Identificador principal de um cidadão |
 
 ---
 
 ## D
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **DAB** | Departamento de Atenção Básica | — |
-| **DATASUS** | Departamento de Informática do Sistema Único de Saúde do Brasil | — |
-| **DESCO** | Departamento de Estratégias e Políticas de Saúde Comunitária | — |
-| **DUM** | Data da Última Menstruação | — |
-
----
-
-## E
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **e-SUS** | Estratégia do DAB para reestruturar as informações da Atenção Básica/Primária em nível nacional | — |
-| **eABP** | Equipe de Atenção Básica Prisional | — |
-| **eAP** | Equipe de Atenção Primária | — |
-| **eCR** | Equipe de Consultório na Rua | — |
-| **EMAD** | Equipe Multiprofissional de Atenção Domiciliar | — |
-| **EMAP** | Equipe Multiprofissional de Apoio | — |
-| **eMulti** | Equipe Multiprofissional na APS | — |
-| **eSB** | Equipe de Saúde Bucal | — |
-| **ESF** | Equipe de Saúde da Família | — |
+| **DUM** | Documentação Clínica — SOAP | Data da Última Menstruação. Campo clínico registrado no SOAP para avaliação gestacional |
 
 ---
 
 ## F
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **FA** | Fora de Área — opção de preenchimento de microárea na Ficha de Cadastro Individual ou no módulo de Acompanhamento do Território | — |
-| **FAC** | Ficha de Atividade Coletiva | Componente do CDS. |
-| **FAD** | Ficha de Atendimento Domiciliar | Componente do CDS. |
-| **FAEA** | Ficha de Avaliação de Elegibilidade e Admissão | Componente do CDS. |
-| **FAI** | Ficha de Atendimento Individual | Componente do CDS. |
-| **FAOI** | Ficha de Atendimento Odontológico Individual | Componente do CDS. |
-| **FCDT** | Ficha de Cadastro Domiciliar e Territorial | Componente do CDS. |
-| **FCI** | Ficha de Cadastro Individual | Componente do CDS. |
-| **FCZM** | Ficha Complementar — Síndrome Neurológica por Zika / Microcefalia | Componente do CDS. |
-| **FHIR** | Fast Healthcare Interoperability Resources — padrão de dados de saúde para troca de informações entre sistemas | — |
-| **Fichas** | Documentos que coletam dados de cadastros, visitas domiciliares, atendimentos e atividades das equipes de AB. São digitadas no CDS off-line ou PEC e enviadas ao SISAB via PEC com conectividade. | Compõem o CDS. |
-| **FIOCRUZ** | Fundação Oswaldo Cruz | — |
-| **FP** | Ficha de Procedimentos | Componente do CDS. |
-| **FV** | Ficha de Vacinação | Componente do CDS. |
-| **FVDT** | Ficha de Visita Domiciliar e Territorial | Componente do CDS. |
-
----
-
-## G
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **GT** | Grupo de Trabalho — equipe do e-SUS APS em Brasília responsável por negócios | — |
+| **FAI** | Sincronização | Ficha de Atendimento Individual. Gerada a partir de um atendimento clínico e enviada ao PEC |
+| **Folha de Rosto** | Documentação Clínica | Contexto clínico resumido do cidadão consultado antes do atendimento: alergias/reações adversas, problemas/condições, resultados de exames e medicamentos em uso. Dados sempre atualizados pelo PEC |
+| **FP** | Sincronização | Ficha de Procedimentos. Gerada quando o atendimento registra apenas procedimentos, sem consulta completa. Enviada ao PEC |
 
 ---
 
 ## I
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **IBGE** | Instituto Brasileiro de Geografia e Estatística | — |
-| **IMC** | Índice de Massa Corpórea — parâmetro da OMS para calcular o peso ideal | No PEC, o IMC é calculado automaticamente ao inserir peso e altura do cidadão, com histórico de medições. |
-| **Imunobiológico** | Substâncias que atuam no sistema imune para evitar danos por antígenos. No PEC, podem ser soros ou vacinas. | — |
-| **INE** | Identificador Nacional de Equipes — contém nome e código da equipe | — |
-| **Interconsulta** | Atendimento compartilhado entre profissionais de saúde | Termo utilizado pelos profissionais, embora não apareça explicitamente no PEC. |
+| **Identificação** | Identificação da Pessoa | Etapa pré-atendimento em que o profissional localiza o cidadão por CPF ou CNS antes de iniciar o registro clínico |
+| **IMC** | Documentação Clínica — SOAP | Índice de Massa Corpórea. Calculado automaticamente a partir do peso e altura informados durante o atendimento |
+| **INE** | Autenticação / Seleção de Lotação | Identificador Nacional de Equipes. Código único da equipe de saúde à qual o profissional está vinculado na lotação |
 
 ---
 
 ## L
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **LEDI** | Layout e-SUS APS de Dados e Interface | — |
-
----
-
-## M
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **MCA** | Marcadores de Consumo Alimentar | — |
-| **Microárea** | Espaço geográfico delimitado onde residem até 750 pessoas, correspondente à área de atuação de um ACS | — |
-| **MS** | Ministério da Saúde | — |
-
----
-
-## N
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **NASF** | Núcleo de Apoio à Saúde da Família | — |
-
----
-
-## O
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **Odontograma** | Diagrama gráfico de todos os dentes da arcada superior e inferior do paciente, descrevendo a situação de cada elemento dentário. | Principal forma de registro no Atendimento Odontológico. |
-| **openEHR** | Especificação de padrão aberto em informática da saúde para gerenciar, armazenar, recuperar e trocar dados em registros eletrônicos de saúde (EHR) | — |
+| **Lista de Atendimentos** | Lista e Gestão de Atendimentos | Relação de atendimentos pendentes ou em rascunho para a lotação ativa |
+| **Lista de Pessoas** | Lista e Gestão de Atendimentos | Relação de cidadãos da área de cobertura da equipe |
+| **Lotação** | Autenticação / Seleção de Lotação | Vínculo ativo do profissional com uma equipe de saúde e uma UBS, num período determinado. Selecionada no acesso ao sistema |
 
 ---
 
 ## P
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **PBF** | Programa Bolsa Família | — |
-| **PEC** | Prontuário Eletrônico do Cidadão — **nome do sistema** | — |
-| **Periograma** | Exame subgengival utilizado no tratamento de Periodontia | — |
-| **PMAQ** | Programa Nacional de Melhoria do Acesso e da Qualidade da Atenção Básica | — |
-| **PNAB** | Política Nacional de Atenção Básica | — |
-| **PNAD** | Pesquisa Nacional por Amostra de Domicílios | — |
-| **PNAN** | Política Nacional de Alimentação e Nutrição | — |
-| **PNI** | Programa Nacional de Imunizações | — |
-| **PNIIS** | Política Nacional de Informação e Informática em Saúde | — |
-| **PNPIC** | Política Nacional de Práticas Integrativas e Complementares | — |
-| **PNSB** | Política Nacional de Saúde Bucal | — |
-| **Puericultura** | Acompanhamento médico de crianças e adolescentes, desde o nascimento até os 19 anos | O sistema possui seções de registro específicas para puericultura. |
-
----
-
-## R
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **RAC** | Modelo de Informação Registro de Atendimento Clínico da RNDS | — |
-| **RCOP** | Registro Clínico Orientado por Problemas | — |
-| **RG** | Registro Geral — documento de identificação civil emitido pelos estados e DF | Dado de identificação do cidadão e dos profissionais. |
-| **RIA** | Registro de Imunobiológico Administrado da RNDS | — |
-| **RIA-R** | Registro de Imunobiológico Administrado em Rotina da RNDS | — |
-| **RNDS** | Rede Nacional de Dados em Saúde — plataforma nacional de integração de dados em saúde | — |
-| **RPM** | Registro de Prescrição de Medicamentos da RNDS | — |
+| **PEC** | Sincronização | Prontuário Eletrônico do Cidadão. Sistema com o qual o aplicativo sincroniza dados; origem e destino das informações clínicas |
+| **PEC** | Documentação Clínica | Indicador de origem: dados do cidadão foram obtidos do servidor PEC (vs. cadastro manual pelo profissional) |
+| **Profissional** | Autenticação / Documentação Clínica | Usuário autenticado do aplicativo: profissional de saúde identificado por CPF, com CBO e lotação ativa |
+| **Prontuário** | Documentação Clínica / Sincronização | Registro clínico do cidadão no PEC. Referência que permite ao aplicativo buscar a Folha de Rosto e os dados cadastrais do cidadão |
 
 ---
 
 ## S
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **SAD** | Serviço de Atenção Domiciliar | — |
-| **SAES** | Secretaria de Atenção Especializada à Saúde | — |
-| **SAPS** | Secretaria de Atenção Primária à Saúde | — |
-| **SAS** | Secretaria de Atenção à Saúde | — |
-| **SBIS** | Sociedade Brasileira de Informática em Saúde — desenvolve o Manual de Certificação para Sistemas de Registro Eletrônico, com requisitos de segurança relevantes para o PEC | — |
-| **SCNES** | Sistema de Cadastro Nacional de Estabelecimentos de Saúde | — |
-| **SEIDIGI** | Secretaria de Informação e Saúde Digital | — |
-| **SESAI** | Secretaria de Saúde Indígena | — |
-| **SIGTAP** | Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e OPM do SUS | — |
-| **SISAB** | Sistema de Informação em Saúde da Atenção Básica | — |
-| **SISREG** | Sistema de Regulação — sistema web para gerenciamento do Complexo Regulador (inserção de oferta, solicitação, confirmação de atendimento e regulação de leitos) | — |
-| **SOAP** | Método de registro clínico orientado por problemas (Dr. Lawrence Weed): **S**ubjetivo, **O**bjetivo, **A**valiação e **P**lano | Estrutura central de registro de atendimentos no PEC. |
-
----
-
-## T
-
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
-|---|---|---|
-| **TSB** | Técnico em Saúde Bucal | — |
+| **SIGTAP** | Documentação Clínica — SOAP | Sistema de Gerenciamento da Tabela de Procedimentos do SUS. Codifica procedimentos realizados durante o atendimento |
+| **SOAP** | Documentação Clínica | Método de registro clínico orientado por problemas: Subjetivo, Objetivo, Avaliação e Plano |
 
 ---
 
 ## U
 
-| Termo / Sigla | Descrição | Contexto de uso no sistema |
+| Termo / Sigla | Contexto Delimitado | Descrição |
 |---|---|---|
-| **UBS** | Unidade Básica de Saúde | Identificador do nome da unidade de saúde no sistema. |
+| **UBS** | Autenticação / Seleção de Lotação | Unidade Básica de Saúde. Estabelecimento onde o profissional exerce sua lotação |
 
 ---
 
-*Última atualização: gerado a partir da planilha de termos do domínio "Glossário e-SUS".*
+*Este glossário lista apenas termos do domínio amplo de APS relevantes para o domínio do app Atendimento. Demais termos foram omitidos intencionalmente.*

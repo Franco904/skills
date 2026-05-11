@@ -73,7 +73,7 @@ Seguir esta ordem obrigatória nas declarações:
 ### 6.1 Linguagem ubíqua
 
 - Nomes de classes de teste, variáveis, métodos e descrições devem usar
-os termos do domínio (ex: `Atendimento`, `CidadaoRepository`).
+os termos do domínio (ex: `Atendimento`, `CidadaoRepository`). Consulte `.claude/rules/1_glossary.md` para a listagem completa de termos por contexto.
 - Evitar termos genéricos como `DataService`, `Manager`, `Helper`, bem como termos que evidenciem tecnologias usadas na implementação, como `Left`, `Right`, `Json`, `Drift`, `Strategy`, `Abstract Factory`.
 
 ### 6.2 Fronteiras lógicas bem definidas

@@ -115,8 +115,8 @@ Pode ser promovida a:
 
 | Ação GitHub | Quando usar |
 |---|---|
-| **Request changes** | Existe ao menos 1 `[must fix]` **ou** 1 `[question]` com resolução pendente |
-| **Comment** | Existem apenas `[should fix]` e/ou `[nitpick]`, mas o consenso ainda não foi fechado |
+| **Request changes** | Existe ao menos 1 `[must fix]` |
+| **Comment** | Existem apenas `[should fix]` e/ou `[nitpick]`, mas o consenso ainda não foi fechado, **ou** ao menos 1 `[question]` com resolução pendente |
 | **Approve** | Todos os `[must fix]` e `[question]` foram resolvidos; `[should fix]` e `[nitpick]` têm consenso fechado com o Tech Lead |
 
 **Fluxo após correção:**
