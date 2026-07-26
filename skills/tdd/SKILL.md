@@ -7,8 +7,7 @@ description: Desenvolvimento orientado a testes com o ciclo red-green-refactor. 
 
 Filosofia e anti-padrões: ver [REFERENCE.md](REFERENCE.md).
 
-Diretrizes de testes a serem seguidas em GREEN: @docs/guidelines/0002-all-tests.md, @docs/guidelines/0003-unit-tests.md,
-@docs/guidelines/0004-integration-tests.md, @docs/guidelines/0005-presentation-tests.md.
+Diretrizes de testes a serem seguidas em GREEN presentes em @docs/guidelines/0001-tests.md.
 
 ## Processo
 

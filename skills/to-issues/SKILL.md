@@ -15,7 +15,7 @@ Se você ainda não explorou a base de código, faça isso para entender o estad
 
 ### 3. Rascunhar as fatias verticais
 
-Decomponha o épico em issues do tipo **tracer bullet**. Cada issue é uma fatia vertical fina que corta e "ilumina" TODAS as camadas de integração de ponta a ponta (ex.: presentation, domain, data, external) — NÃO uma fatia horizontal de uma única camada.
+Decomponha o épico em issues do tipo **tracer bullet**. Cada issue é uma fatia vertical fina que corta e "ilumina" TODAS as camadas de integração de ponta a ponta (ex.: apresentação → casos de uso → lógica de negócio → dados) — NÃO uma fatia horizontal de uma única camada.
 
 As issues podem ser classificadas como **HITL** (*Human In The Loop*) ou **AFK** (*Away From Keyboard*). Issues HITL requerem interação humana, como uma decisão arquitetural ou uma revisão de design. Issues AFK podem ser implementadas e mergeadas sem interação humana. Prefira AFK sempre que possível.
 

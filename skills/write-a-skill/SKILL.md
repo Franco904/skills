@@ -52,7 +52,7 @@ description: Descrição breve da capacidade. Use quando [gatilhos específicos]
 
 ## Funcionalidades avançadas
 
-[Link para arquivos separados: Ver [REFERENCE.md](REFERENCE.md)]
+Ver [REFERENCE.md](REFERENCE.md) para detalhes.
 ```
 
 ## Requisitos da Description

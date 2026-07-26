@@ -32,9 +32,9 @@ Buscar a issue no GitHub com `gh issue view <issue-number>`. Extrair:
 ### 2. Seção 1 — Análise de Impactos
 
 Verificar se o diff toca arquivos em:
-- `modules/common/` ou `modules/dependencies/`
+- Módulo comum
 - Widgets/temas compartilhados entre módulos
-- Rotas (`*_module.dart`)
+- Rotas
 - Banco de dados (migrations, DAOs compartilhados)
 - Contratos de API / serialização
 
@@ -52,7 +52,7 @@ Só isso. Se não houver nada a destacar, preencher a seção com `–`.
 
 ### 4. Seção 3 — Plano de QA
 
-Se a issue tiver a label **"Sem teste"**, preencher a seção com `–` e pular esta etapa.
+Se a issue orientar que não haverá teste, preencher a seção com `–` e pular esta etapa.
 
 Caso contrário, derivar o fluxo ponta-a-ponta a partir do tracer bullet da issue. Gerar como lista de bullet points, um item por cenário, no formato:
 

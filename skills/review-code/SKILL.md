@@ -38,10 +38,8 @@ Ref inválida ou diff vazio devem falhar aqui — não dentro de sub-agents para
 
 | Diretriz | Aplicar se o diff contiver |
 |---|---|
-| `0003-unit-tests` | `*_test.dart` em `presentation/`, `domain/`, `data/`, `external/` (fora de DAO) |
-| `0004-integration-tests` | `*_test.dart` em `external/` envolvendo DAOs, preferences ou adapters |
-| `0005-presentation-tests` | `*_test.dart` em `presentation/` |
-| `0006-e2e-tests` | `e2e/**/*.yaml` |
+| `0001-tests` | Arquivos de teste adicionados/modificados |
+| Convenções Maestro (`e2e/SKILL.md`) | `e2e/**/*.yaml` |
 
 ### 2. Classificar por severidade
 
