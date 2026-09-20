@@ -1,60 +1,60 @@
 # Skills
 
-A collection of [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) for agent tools (e.g. Claude Code, Codex), built around a domain-driven software delivery workflow: turning a problem into an epic, an epic into vertical-slice issues, an issue into tested and reviewed code, and code into a mergeable PR.
+Uma coleção de [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) para ferramentas de agente (ex: Claude Code, Codex), construída em torno de um workflow de entrega de software orientado a domínio: transformar um problema em um épico, um épico em issues verticais, uma issue em código testado e revisado, e código em um PR mergeável.
 
-Every skill leans on two shared artifacts maintained across the whole workflow:
-- `CONTEXT.md` — the project's ubiquitous-language glossary.
-- `docs/adr/` — Architecture Decision Records for hard-to-reverse, non-obvious decisions.
-- `docs/guidelines/` — numbered engineering guidelines (tests, interface design, error handling, ...) that `review-code` and `tdd` enforce and reference by number.
+Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo de todo o workflow:
+- `CONTEXT.md` — o glossário de linguagem ubíqua do projeto.
+- `docs/adr/` — Architecture Decision Records para decisões difíceis de reverter, surpreendentes e não óbvias.
+- `docs/guidelines/` — diretrizes de engenharia numeradas (testes, design de interface, tratamento de erros, ...).
 
-> **All of these skills are user-initiated.** Descriptions such as "use when the user wants to..." describe *when a human should invoke the skill* (e.g. via `/tdd`, `/grill-me`) — none of them are meant to fire autonomously mid-conversation without being explicitly asked for. That said, the LLM may proactively suggest one of these skills, and you can continue the session by invoking it.
+> **Todas essas skills são iniciadas pelo usuário.** Descrições como "use quando o usuário quiser..." descrevem *quando um humano deve invocar a skill* (ex: via `/tdd`, `/grill-me`) — nenhuma delas deve disparar autonomamente no meio de uma conversa sem ser explicitamente solicitada. Dito isso, o LLM pode sugerir proativamente uma dessas skills, e você pode continuar a sessão invocando-a.
 
-## Skill catalogue
+## Catálogo de skills
 
-| Skill | What it does | Classification |
+| Skill | O que faz | Classificação |
 |---|---|---|
-| [`grill-me`](skills/grill-me/SKILL.md) | Interrogates a discovery or delivery plan one question at a time, cross-checking it against `CONTEXT.md`, ADRs, and the actual codebase, updating the glossary and ADRs as decisions crystallize. | HITL |
-| [`to-epic`](skills/to-epic/SKILL.md) | Synthesizes the current conversation's context into an epic document — **no interviewing**, only what's already known. | AFK |
-| [`to-issues`](skills/to-issues/SKILL.md) | Derives an epic into independent, vertically-sliced tracer-bullet issues, classifies each as HITL/AFK, and iterates the breakdown with the user until approved. | HITL |
-| [`tdd`](skills/tdd/SKILL.md) | Drives red-green-refactor development: plan and interface design are agreed with the user, then RED/GREEN/refactor cycles run in isolated subagents with mandatory manual mutation testing. | HITL / AFK |
-| [`review-code`](skills/review-code/SKILL.md) | Reviews a diff as a senior architect mentoring a junior: severity-tagged comments (`must fix`/`should fix`/`nitpick`/`question`), a GitHub review verdict, and guideline tracking. | AFK |
-| [`to-pr`](skills/to-pr/SKILL.md) | Generates a PR body from `pull_request_template.md`, including an end-to-end QA plan derived from the issue's tracer bullet. | AFK |
-| [`handoff`](skills/handoff/SKILL.md) | Compacts the current conversation into a `HANDOFF.md` document (with suggested follow-up skills) so a fresh agent/session can pick up the work. | AFK |
-| [`prototype`](skills/prototype/SKILL.md) | Builds a throwaway prototype to answer one design question fast — a single shareable HTML file for a state/logic question, or several switchable UI variants for a look-and-feel question — then folds the validated decision back into the real code. | HITL |
-| [`wayfinder`](skills/wayfinder/SKILL.md) | Plans a chunk of work too large for one agent session as a shared map of decision tickets on the issue tracker, resolving one ticket — research, prototyping, grilling, or a manual task — at a time until the way to the destination is clear. | HITL / AFK |
-| [`writing-for-agents`](skills/writing-for-agents/SKILL.md) | Reference for writing any document an agent consumes — a skill, `AGENTS.md`/`CLAUDE.md`, or a doc reached by a pointer — so the agent takes the same process every run. Generalizes the former `write-a-skill`. | AFK |
+| [`grill-me`](skills/grill-me/SKILL.md) | Interroga um plano de discovery ou de delivery uma pergunta por vez, cruzando com `CONTEXT.md`, ADRs e o código real, atualizando o glossário e os ADRs conforme as decisões se cristalizam. | HITL |
+| [`to-epic`](skills/to-epic/SKILL.md) | Sintetiza o contexto da conversa atual em um documento de épico — **sem entrevistar**, apenas com o que já é conhecido. | AFK |
+| [`to-issues`](skills/to-issues/SKILL.md) | Deriva um épico em issues independentes, fatiadas verticalmente como tracer bullets, classifica cada uma como HITL/AFK, e itera a divisão com o usuário até ser aprovada. | HITL |
+| [`tdd`](skills/tdd/SKILL.md) | Conduz o desenvolvimento red-green-refactor: plano e design de interface são acordados com o usuário, depois os ciclos RED/GREEN/refactor rodam em subagents isolados com mutation testing manual obrigatório. | HITL / AFK |
+| [`review-code`](skills/review-code/SKILL.md) | Revisa um diff como um arquiteto sênior mentorando um júnior: comentários marcados por severidade (`must fix`/`should fix`/`nitpick`/`question`), um veredito de review no GitHub, e rastreamento de diretrizes. | AFK |
+| [`to-pr`](skills/to-pr/SKILL.md) | Gera o corpo de um PR a partir de `pull_request_template.md`, incluindo um plano de QA ponta a ponta derivado do tracer bullet da issue. | AFK |
+| [`wayfinder`](skills/wayfinder/SKILL.md) | Planeja um bloco de trabalho grande demais para uma única sessão de agente como um mapa compartilhado de tickets de decisão no issue tracker, resolvendo um ticket por vez — pesquisa, prototipagem, grilling, ou uma tarefa manual — até que o caminho até o destino esteja claro. | HITL / AFK |
+| [`prototype`](skills/prototype/SKILL.md) | Constrói um protótipo descartável em código para responder rapidamente a uma questão de design — um único arquivo HTML compartilhável para uma questão de estado/lógica, ou várias variantes de UI alternáveis para uma questão de aparência — e depois incorpora a decisão validada de volta ao código real. | HITL |
+| [`handoff`](skills/handoff/SKILL.md) | Compacta a conversa atual em um documento de passagem de responsabilidade (com sugestões de skills seguintes) para que um agente/sessão nova possa retomar o trabalho. | AFK |
+| [`writing-for-agents`](skills/writing-for-agents/SKILL.md) | Referência para escrever qualquer documento consumido por um agente — uma skill, um `AGENTS.md`/`CLAUDE.md`, ou um doc alcançado por um ponteiro — para que o agente siga o mesmo processo em toda execução. Generaliza a antiga `write-a-skill`. | AFK |
 
-## Classification legend
+## Legenda de classificação
 
-- **HITL — Human In The Loop**: the skill cannot finish without a human decision point (answering questions, approving a plan or draft, closing a consensus).
-- **AFK — Away From Keyboard**: the skill runs end-to-end on the context it's given and produces a finished artifact without waiting on the user.
-- **HITL / AFK**: a hybrid — part of the skill runs autonomously (e.g. a tracer bullet, a RED/GREEN cycle) while another part requires an explicit human checkpoint (e.g. edge cases, the test plan).
+- **HITL — Human In The Loop**: a skill não consegue terminar sem um ponto de decisão humana (responder perguntas, aprovar um plano ou rascunho, fechar um consenso).
+- **AFK — Away From Keyboard**: a skill roda de ponta a ponta com o contexto que recebe e produz um artefato finalizado sem esperar pelo usuário.
+- **HITL / AFK**: um híbrido — parte da skill roda autonomamente (ex: um tracer bullet, um ciclo RED/GREEN) enquanto outra parte exige um checkpoint humano explícito (ex: edge cases, o plano de teste).
 
 ### HITL
-- [`grill-me`](skills/grill-me/SKILL.md) — one question at a time, waits for each answer before continuing.
-- [`to-issues`](skills/to-issues/SKILL.md) — iterates the issue breakdown until the user approves it.
-- [`prototype`](skills/prototype/SKILL.md) — hands the artifact to a human (or non-developer) to react to; the reaction is what resolves the question.
+- [`grill-me`](skills/grill-me/SKILL.md) — uma pergunta por vez, espera cada resposta antes de continuar.
+- [`to-issues`](skills/to-issues/SKILL.md) — itera a divisão de issues até o usuário aprovar.
+- [`prototype`](skills/prototype/SKILL.md) — entrega o artefato a um humano (ou não desenvolvedor) para reagir; a reação é o que resolve a questão.
 
 ### AFK
-- [`to-epic`](skills/to-epic/SKILL.md) — writes the epic doc directly from the current conversation's context.
-- [`review-code`](skills/review-code/SKILL.md) — delivers a complete review pass without a mid-review checkpoint.
-- [`to-pr`](skills/to-pr/SKILL.md) — collects context and writes the PR body file directly.
-- [`handoff`](skills/handoff/SKILL.md) — writes the handoff doc directly from existing context; can be invoked from any point in the workflow.
-- [`writing-for-agents`](skills/writing-for-agents/SKILL.md) — consulted as reference while writing another document; no checkpoint of its own.
+- [`to-epic`](skills/to-epic/SKILL.md) — escreve o doc do épico diretamente a partir do contexto da conversa atual.
+- [`review-code`](skills/review-code/SKILL.md) — entrega uma passada de review completa sem checkpoint no meio.
+- [`to-pr`](skills/to-pr/SKILL.md) — coleta o contexto e escreve o arquivo de corpo do Pull Request diretamente, incluindo um plano de QA para o usuário testar manualmente (aqui vem o taste/discernimento).
+- [`handoff`](skills/handoff/SKILL.md) — escreve o doc de handoff diretamente a partir do contexto existente; pode ser invocada de qualquer ponto do workflow.
+- [`writing-for-agents`](skills/writing-for-agents/SKILL.md) — consultada como referência ao escrever outro documento; não tem checkpoint próprio.
 
 ### HITL / AFK
-- [`tdd`](skills/tdd/SKILL.md) — the test plan and interface design require user approval (HITL); RED/GREEN/refactor cycles then run autonomously in dedicated subagents (AFK).
-- [`wayfinder`](skills/wayfinder/SKILL.md) — each ticket is typed HITL or AFK on its own (research runs unattended; grilling, prototyping, and most tasks need a human), so the map as a whole is a mix.
+- [`tdd`](skills/tdd/SKILL.md) — o plano de teste e o design de interface exigem aprovação do usuário (HITL); os ciclos RED/GREEN/refactor então rodam autonomamente em subagents dedicados (AFK).
+- [`wayfinder`](skills/wayfinder/SKILL.md) — cada ticket é tipado como HITL ou AFK individualmente (pesquisa roda sem supervisão; grilling, prototipagem e a maioria das tarefas precisam de um humano), então o mapa como um todo é misto.
 
-## Dev workflow in a software app project
+## Workflow de dev em um projeto de app de software
 
-These skills are designed to be chained across the life of a feature, from an idea to a merged PR:
+Essas skills foram desenhadas para serem encadeadas ao longo da vida de uma feature, de uma ideia de tamanho indefinido a um PR mergeado:
 
 ```mermaid
 flowchart LR
-    A[Idea] --> Z{Fits in one session?}
-    Z -- yes --> B["/grill-me"]
-    Z -- no --> W["/wayfinder"]
+    A[Ideia] --> Z{Cabe em uma sessão?}
+    Z -- sim --> B["/grill-me"]
+    Z -- não --> W["/wayfinder"]
     B --> C["/to-epic"]
     W --> C
     C --> D["/to-issues"]
@@ -71,17 +71,17 @@ flowchart LR
     G -.- L
 ```
 
-1. **Discovery** — challenge the problem framing and MVP boundaries. When research, grilling, and prototyping all fit in one session (or a short chain of them), drive it with `grill-me`, looping in `prototype` whenever a design question needs a concrete artifact to react to — each session picks up from the last through a `HANDOFF.md` from `/handoff`. When the effort is big enough to outrun that — more open decisions than a session or a short handoff chain can hold — drive discovery with `wayfinder` instead: it charts the decisions as a shared map of tickets (typed `research`, `prototype`, `grilling`, or `task`) on the issue tracker and resolves them one at a time, safely across concurrent sessions. Either way, update the project's glossary with new domain terminology as decisions land, then synthesize the agreed scope into an epic with `to-epic`.
-2. **Decomposition** — break the epic into independent, vertically-sliced, HITL/AFK-tagged issues with `to-issues`.
-3. **Delivery planning** — before touching code for a given issue, run `grill-me` again (delivery mode) to pressure-test the technical plan against ADRs and naming conventions.
-4. **Implementation** — build the behavior test-first with `tdd` (red-green-refactor, mutation-tested).
-5. **Review & delivery** — get a senior-level pass with `review-code`, then generate the PR body (impact analysis, review notes, QA plan) with `to-pr`.
-6. **Continuity** — whenever a session needs to end before the issue is done (context window pressure, end of the day, handing off to someone else), `handoff` compacts the conversation into a dedicated doc so the next session (or agent) can resume at that same step without re-deriving context.
+1. **Discovery** — desafie o framing do problema e os limites do MVP. Quando pesquisa, grilling e prototipagem cabem todos em uma sessão (ou em uma cadeia curta delas), conduza com `grill-me`, recorrendo a `prototype` sempre que uma questão de design precisar de um artefato concreto para reagir — cada sessão retoma a anterior através de um `HANDOFF.md` gerado por `/handoff`. Quando o esforço é grande demais para isso — mais decisões em aberto do que uma sessão ou uma cadeia curta de handoffs comporta — conduza o discovery com `wayfinder` em vez disso: ele mapeia as decisões como um mapa compartilhado de tickets (tipados `research`, `prototype`, `grilling`, ou `task`) no issue tracker e os resolve um de cada vez, com segurança entre sessões concorrentes. De qualquer forma, atualize o glossário do projeto com nova terminologia de domínio conforme as decisões se fecham, e depois sintetize o escopo acordado em um épico com `to-epic`.
+2. **Decomposição** — quebre o épico em issues independentes, fatiadas verticalmente e marcadas HITL/AFK com `to-issues`.
+3. **Planejamento de entrega** — antes de tocar em código para uma dada issue, rode `grill-me` novamente (modo entrega) para testar a resistência do plano técnico contra os ADRs e as convenções de nomenclatura.
+4. **Implementação** — construa o comportamento test-first com `tdd` (red-green-refactor, com mutation testing).
+5. **Review e entrega** — obtenha uma passada em nível sênior com `review-code`, depois gere o corpo do PR (análise de impacto, notas de review, plano de QA) com `to-pr`.
+6. **Continuidade** — sempre que uma sessão precisar terminar antes de a issue estar concluída (pressão de janela de contexto perto de 40% da capacidade, fim do dia, passando o trabalho para outra pessoa), `handoff` compacta a conversa em um doc dedicado para que a próxima sessão (ou agente) possa retomar exatamente naquele ponto sem precisar re-derivar o contexto.
 
-Considerations:
+Considerações:
 
-- `/handoff` isn't tied to any single step above (in the diagram, is dashed-linked to only a few sample steps above to keep the diagram legible). It can be called from wherever the session happens to end: mid-`grill-me` while still shaping the discovery, between issues after `to-issues`, mid-`tdd` between red/green cycles, or anywhere else. It's a cross-cutting "escape hatch" for the whole workflow, not a stage of it.
+- `/handoff` não está atrelado a nenhuma etapa específica acima (no diagrama, está ligado por linhas tracejadas apenas a algumas etapas de exemplo para manter o diagrama legível). Pode ser chamado de onde quer que a sessão termine: no meio de um `grill-me` enquanto o discovery ainda está sendo moldado, entre issues depois de `to-issues`, no meio de um `tdd` entre ciclos red/green, ou em qualquer outro ponto. É uma "válvula de escape" transversal a todo o workflow, não uma etapa dele.
 
-- `wayfinder` replaces `grill-me` only once the work outruns a single session (or a short `handoff` chain) — research, prototyping, and the grilling conversation itself still happen, just resolved ticket-by-ticket on the map instead of turn-by-turn in one thread. Short of that threshold, `grill-me` and `prototype` iterate directly across sessions, each one picking up from the last via a `HANDOFF.md`.
+- `wayfinder` substitui `grill-me` apenas quando o trabalho ultrapassa uma única sessão (ou uma cadeia curta de `handoff`) — pesquisa, prototipagem e a própria conversa de grilling ainda acontecem, só que resolvidas ticket a ticket no mapa em vez de turno a turno em uma única thread. Abaixo desse limiar, `grill-me` e `prototype` iteram diretamente entre sessões, cada uma retomando a anterior via um `HANDOFF.md`.
 
-- `writing-for-agents` sits outside this loop — it's the reference consulted whenever the team writes or edits a skill, or touches `AGENTS.md`/`CLAUDE.md`, to extend this toolbox itself.
+- `writing-for-agents` fica fora desse ciclo — é a referência consultada sempre que o time escreve ou edita uma skill, ou mexe em `AGENTS.md`/`CLAUDE.md`, para estender esta própria caixa de ferramentas.
