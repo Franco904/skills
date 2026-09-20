@@ -24,15 +24,14 @@ Obs.: Qualquer definição de arquitetura ou arquivo em comum que possa impactar
 </details>
 
 **Se sim, informe:**
-- [ ] 1. Qual item/arquivo precisou ser alterado? 
-- [ ] 2. Quais alterações foram necessárias?
-- [ ] 3. Por que foi necessário realizar essa alteração?
-- [ ] 4. Existe outra forma de solucionar o problema sem alterar arquivos compartilhados/estabilizados? 
+- [ ] 1. Quais alterações foram necessárias?
+- [ ] 2. Por que foi necessário realizar essa alteração?
+- [ ] 3. A solução adotada foi resultado de uma troca real? 
 
 ## 2. Orientações para Review
 
 Informe aqui qualquer ponto que mereça atenção extra durante a revisão.</br>
-Caso algum item além dos critérios de aceite da tarefa tenha sido alterado, isso deve ser sinalizado aqui.
+Caso algum item além dos critérios de aceite da tarefa tenha sido alterado, isso deve ser sinalizado aqui. Seja conciso na descrição.
 
 ## 3. Orientações para QA
 
