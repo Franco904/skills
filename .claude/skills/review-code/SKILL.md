@@ -39,7 +39,6 @@ Ref inválida ou diff vazio devem falhar aqui — não dentro de sub-agents para
 | Diretriz | Aplicar se o diff contiver |
 |---|---|
 | `0001-tests` | Arquivos de teste adicionados/modificados |
-| Convenções Maestro (`e2e/SKILL.md`) | `e2e/**/*.yaml` |
 
 ### 2. Classificar por severidade
 
