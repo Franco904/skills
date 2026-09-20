@@ -74,7 +74,7 @@ Cobrir **obrigatoriamente**:
 
 ### 5. Gerar arquivo
 
-Salvar como `pr-<branch-name>.md` na raiz do repositório, usando a estrutura exata do template @pull_request_template.md.
+Salvar como `pr-<branch-name>.md` na raiz do repositório, usando a estrutura exata do template @PULL_REQUEST_TEMPLATE.md.
 
 Cabeçalho: use "closes" para features; "fixes" para bugs. Substituir `#xyz` pelo número real da issue.
 
