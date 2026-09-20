@@ -13,16 +13,16 @@ Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo d
 
 | Skill | O que faz | Classificação |
 |---|---|---|
-| [`grill-me`](skills/grill-me/SKILL.md) | Interroga um plano de discovery ou de delivery uma pergunta por vez, cruzando com `CONTEXT.md`, ADRs e o código real, atualizando o glossário e os ADRs conforme as decisões se cristalizam. | HITL |
-| [`to-epic`](skills/to-epic/SKILL.md) | Sintetiza o contexto da conversa atual em um documento de épico — **sem entrevistar**, apenas com o que já é conhecido. | AFK |
-| [`to-issues`](skills/to-issues/SKILL.md) | Deriva um épico em issues independentes, fatiadas verticalmente como tracer bullets, classifica cada uma como HITL/AFK, e itera a divisão com o usuário até ser aprovada. | HITL |
-| [`tdd`](skills/tdd/SKILL.md) | Conduz o desenvolvimento red-green-refactor: plano e design de interface são acordados com o usuário, depois os ciclos RED/GREEN/refactor rodam em subagents isolados com mutation testing manual obrigatório. | HITL / AFK |
-| [`review-code`](skills/review-code/SKILL.md) | Revisa um diff como um arquiteto sênior mentorando um júnior: comentários marcados por severidade (`must fix`/`should fix`/`nitpick`/`question`), um veredito de review no GitHub, e rastreamento de diretrizes. | AFK |
-| [`to-pr`](skills/to-pr/SKILL.md) | Gera o corpo de um PR a partir de `pull_request_template.md`, incluindo um plano de QA ponta a ponta derivado do tracer bullet da issue. | AFK |
-| [`wayfinder`](skills/wayfinder/SKILL.md) | Planeja um bloco de trabalho grande demais para uma única sessão de agente como um mapa compartilhado de tickets de decisão no issue tracker, resolvendo um ticket por vez — pesquisa, prototipagem, grilling, ou uma tarefa manual — até que o caminho até o destino esteja claro. | HITL / AFK |
-| [`prototype`](skills/prototype/SKILL.md) | Constrói um protótipo descartável em código para responder rapidamente a uma questão de design — um único arquivo HTML compartilhável para uma questão de estado/lógica, ou várias variantes de UI alternáveis para uma questão de aparência — e depois incorpora a decisão validada de volta ao código real. | HITL |
-| [`handoff`](skills/handoff/SKILL.md) | Compacta a conversa atual em um documento de passagem de responsabilidade (com sugestões de skills seguintes) para que um agente/sessão nova possa retomar o trabalho. | AFK |
-| [`writing-for-agents`](skills/writing-for-agents/SKILL.md) | Referência para escrever qualquer documento consumido por um agente — uma skill, um `AGENTS.md`/`CLAUDE.md`, ou um doc alcançado por um ponteiro — para que o agente siga o mesmo processo em toda execução. Generaliza a antiga `write-a-skill`. | AFK |
+| [`grill-me`](.claude/skills/grill-me/SKILL.md) | Interroga um plano de discovery ou de delivery uma pergunta por vez, cruzando com `CONTEXT.md`, ADRs e o código real, atualizando o glossário e os ADRs conforme as decisões se cristalizam. | HITL |
+| [`to-epic`](.claude/skills/to-epic/SKILL.md) | Sintetiza o contexto da conversa atual em um documento de épico — **sem entrevistar**, apenas com o que já é conhecido. | AFK |
+| [`to-issues`](.claude/skills/to-issues/SKILL.md) | Deriva um épico em issues independentes, fatiadas verticalmente como tracer bullets, classifica cada uma como HITL/AFK, e itera a divisão com o usuário até ser aprovada. | HITL |
+| [`tdd`](.claude/skills/tdd/SKILL.md) | Conduz o desenvolvimento red-green-refactor: plano e design de interface são acordados com o usuário, depois os ciclos RED/GREEN/refactor rodam em subagents isolados com mutation testing manual obrigatório. | HITL / AFK |
+| [`review-code`](.claude/skills/review-code/SKILL.md) | Revisa um diff como um arquiteto sênior mentorando um júnior: comentários marcados por severidade (`must fix`/`should fix`/`nitpick`/`question`), um veredito de review no GitHub, e rastreamento de diretrizes. | AFK |
+| [`to-pr`](.claude/skills/to-pr/SKILL.md) | Gera o corpo de um PR a partir de `pull_request_template.md`, incluindo um plano de QA ponta a ponta derivado do tracer bullet da issue. | AFK |
+| [`wayfinder`](.claude/skills/wayfinder/SKILL.md) | Planeja um bloco de trabalho grande demais para uma única sessão de agente como um mapa compartilhado de tickets de decisão no issue tracker, resolvendo um ticket por vez — pesquisa, prototipagem, grilling, ou uma tarefa manual — até que o caminho até o destino esteja claro. | HITL / AFK |
+| [`prototype`](.claude/skills/prototype/SKILL.md) | Constrói um protótipo descartável em código para responder rapidamente a uma questão de design — um único arquivo HTML compartilhável para uma questão de estado/lógica, ou várias variantes de UI alternáveis para uma questão de aparência — e depois incorpora a decisão validada de volta ao código real. | HITL |
+| [`handoff`](.claude/skills/handoff/SKILL.md) | Compacta a conversa atual em um documento de passagem de responsabilidade (com sugestões de skills seguintes) para que um agente/sessão nova possa retomar o trabalho. | AFK |
+| [`writing-for-agents`](.claude/skills/writing-for-agents/SKILL.md) | Referência para escrever qualquer documento consumido por um agente — uma skill, um `AGENTS.md`/`CLAUDE.md`, ou um doc alcançado por um ponteiro — para que o agente siga o mesmo processo em toda execução. Generaliza a antiga `write-a-skill`. | AFK |
 
 ## Legenda de classificação
 
@@ -31,20 +31,20 @@ Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo d
 - **HITL / AFK**: um híbrido — parte da skill roda autonomamente (ex: um tracer bullet, um ciclo RED/GREEN) enquanto outra parte exige um checkpoint humano explícito (ex: edge cases, o plano de teste).
 
 ### HITL
-- [`grill-me`](skills/grill-me/SKILL.md) — uma pergunta por vez, espera cada resposta antes de continuar.
-- [`to-issues`](skills/to-issues/SKILL.md) — itera a divisão de issues até o usuário aprovar.
-- [`prototype`](skills/prototype/SKILL.md) — entrega o artefato a um humano (ou não desenvolvedor) para reagir; a reação é o que resolve a questão.
+- [`grill-me`](.claude/skills/grill-me/SKILL.md) — uma pergunta por vez, espera cada resposta antes de continuar.
+- [`to-issues`](.claude/skills/to-issues/SKILL.md) — itera a divisão de issues até o usuário aprovar.
+- [`prototype`](.claude/skills/prototype/SKILL.md) — entrega o artefato a um humano (ou não desenvolvedor) para reagir; a reação é o que resolve a questão.
 
 ### AFK
-- [`to-epic`](skills/to-epic/SKILL.md) — escreve o doc do épico diretamente a partir do contexto da conversa atual.
-- [`review-code`](skills/review-code/SKILL.md) — entrega uma passada de review completa sem checkpoint no meio.
-- [`to-pr`](skills/to-pr/SKILL.md) — coleta o contexto e escreve o arquivo de corpo do Pull Request diretamente, incluindo um plano de QA para o usuário testar manualmente (aqui vem o taste/discernimento).
-- [`handoff`](skills/handoff/SKILL.md) — escreve o doc de handoff diretamente a partir do contexto existente; pode ser invocada de qualquer ponto do workflow.
-- [`writing-for-agents`](skills/writing-for-agents/SKILL.md) — consultada como referência ao escrever outro documento; não tem checkpoint próprio.
+- [`to-epic`](.claude/skills/to-epic/SKILL.md) — escreve o doc do épico diretamente a partir do contexto da conversa atual.
+- [`review-code`](.claude/skills/review-code/SKILL.md) — entrega uma passada de review completa sem checkpoint no meio.
+- [`to-pr`](.claude/skills/to-pr/SKILL.md) — coleta o contexto e escreve o arquivo de corpo do Pull Request diretamente, incluindo um plano de QA para o usuário testar manualmente (aqui vem o taste/discernimento).
+- [`handoff`](.claude/skills/handoff/SKILL.md) — escreve o doc de handoff diretamente a partir do contexto existente; pode ser invocada de qualquer ponto do workflow.
+- [`writing-for-agents`](.claude/skills/writing-for-agents/SKILL.md) — consultada como referência ao escrever outro documento; não tem checkpoint próprio.
 
 ### HITL / AFK
-- [`tdd`](skills/tdd/SKILL.md) — o plano de teste e o design de interface exigem aprovação do usuário (HITL); os ciclos RED/GREEN/refactor então rodam autonomamente em subagents dedicados (AFK).
-- [`wayfinder`](skills/wayfinder/SKILL.md) — cada ticket é tipado como HITL ou AFK individualmente (pesquisa roda sem supervisão; grilling, prototipagem e a maioria das tarefas precisam de um humano), então o mapa como um todo é misto.
+- [`tdd`](.claude/skills/tdd/SKILL.md) — o plano de teste e o design de interface exigem aprovação do usuário (HITL); os ciclos RED/GREEN/refactor então rodam autonomamente em subagents dedicados (AFK).
+- [`wayfinder`](.claude/skills/wayfinder/SKILL.md) — cada ticket é tipado como HITL ou AFK individualmente (pesquisa roda sem supervisão; grilling, prototipagem e a maioria das tarefas precisam de um humano), então o mapa como um todo é misto.
 
 ## Workflow de dev em um projeto de app de software
 
