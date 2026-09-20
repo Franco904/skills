@@ -23,6 +23,7 @@ Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo d
 | [`prototype`](.claude/skills/prototype/SKILL.md) | Constrói um protótipo descartável em código para responder rapidamente a uma questão de design — um único arquivo HTML compartilhável para uma questão de estado/lógica, ou várias variantes de UI alternáveis para uma questão de aparência — e depois incorpora a decisão validada de volta ao código real. | HITL |
 | [`handoff`](.claude/skills/handoff/SKILL.md) | Compacta a conversa atual em um documento de passagem de responsabilidade (com sugestões de skills seguintes) para que um agente/sessão nova possa retomar o trabalho. | AFK |
 | [`writing-for-agents`](.claude/skills/writing-for-agents/SKILL.md) | Referência para escrever qualquer documento consumido por um agente — uma skill, um `AGENTS.md`/`CLAUDE.md`, ou um doc alcançado por um ponteiro — para que o agente siga o mesmo processo em toda execução. Generaliza a antiga `write-a-skill`. | AFK |
+| [`teach`](.claude/skills/teach/SKILL.md) | Ensina o usuário uma nova habilidade ou conceito ao longo de múltiplas sessões, num workspace de ensino dedicado: missão, referências, registros de aprendizado e lições interativas em HTML. | HITL |
 
 ## Legenda de classificação
 
@@ -34,6 +35,7 @@ Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo d
 - [`grill-me`](.claude/skills/grill-me/SKILL.md) — uma pergunta por vez, espera cada resposta antes de continuar.
 - [`to-issues`](.claude/skills/to-issues/SKILL.md) — itera a divisão de issues até o usuário aprovar.
 - [`prototype`](.claude/skills/prototype/SKILL.md) — entrega o artefato a um humano (ou não desenvolvedor) para reagir; a reação é o que resolve a questão.
+- [`teach`](.claude/skills/teach/SKILL.md) — questiona o usuário sobre a missão quando não está clara, e depende do desempenho dele nas lições (quizzes, tarefas) para calibrar a próxima.
 
 ### AFK
 - [`to-epic`](.claude/skills/to-epic/SKILL.md) — escreve o doc do épico diretamente a partir do contexto da conversa atual.
@@ -85,3 +87,5 @@ Considerações:
 - `wayfinder` substitui `grill-me` apenas quando o trabalho ultrapassa uma única sessão (ou uma cadeia curta de `handoff`) — pesquisa, prototipagem e a própria conversa de grilling ainda acontecem, só que resolvidas ticket a ticket no mapa em vez de turno a turno em uma única thread. Abaixo desse limiar, `grill-me` e `prototype` iteram diretamente entre sessões, cada uma retomando a anterior via um `HANDOFF.md`.
 
 - `writing-for-agents` fica fora desse ciclo — é a referência consultada sempre que o time escreve ou edita uma skill, ou mexe em `AGENTS.md`/`CLAUDE.md`, para estender esta própria caixa de ferramentas.
+
+- `teach` também fica fora desse ciclo — não é uma etapa do workflow de entrega de software, e sim uma skill autônoma de aprendizado, usada em um workspace de ensino dedicado para adquirir uma habilidade ou conceito qualquer ao longo de múltiplas sessões.
