@@ -56,8 +56,8 @@ flowchart LR
     Z -- sim --> B["/grill-me"]
     Z -- não --> W["/wayfinder"]
     B --> C["/to-epic"]
-    W --> C
     C --> D["/to-issues"]
+    W --> D
     D --> E["/grill-me"]
     E --> G["/tdd"]
     G --> I["/review-code"]
