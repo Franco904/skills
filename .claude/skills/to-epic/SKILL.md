@@ -4,7 +4,7 @@ description: Transforma o contexto da conversa atual em um épico. NÃO entrevis
 ---
 
 ## Processo
-1. Explore o repositório para entender o estado atual da base de código, caso ainda não o tenha feito. Use os termos do glossário de domínio do produto (`CONTEXT.md`) ao longo do épico e respeite quaisquer ADRs na área que você está tocando.
+1. Explore o repositório para entender o estado atual da base de código, caso ainda não o tenha feito. Use os termos do glossário de domínio do produto (`GLOSSARY.md`) ao longo do épico e respeite quaisquer ADRs na área que você está tocando.
 2. Prepare o terreno para derivação em histórias de usuário ou tarefas. Use de guia de decisão: **história de usuário** para descrever uma solução de um problema do ponto de vista do especialista de domínio; **tarefa** para descrever uma ação pontual e específica, complementar às histórias, ou atender a uma necessidade técnica identificada, como uma dívida técnica. Use histórias de usuário para a maioria dos casos.
 3. Escreva o épico usando o template abaixo e entregue-a como arquivo .md na raiz do repositório.
 

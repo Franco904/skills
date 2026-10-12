@@ -3,9 +3,9 @@
 Uma coleção de [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) para ferramentas de agente (ex: Claude Code, Codex), construída em torno de um workflow de entrega de software orientado a domínio: transformar um problema em um épico, um épico em issues verticais, uma issue em código testado e revisado, e código em um PR mergeável.
 
 Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo de todo o workflow:
-- `CONTEXT.md` — o glossário de linguagem ubíqua do projeto.
+- `GLOSSARY.md` — o glossário de linguagem ubíqua do projeto.
 - `docs/adr/` — Architecture Decision Records para decisões difíceis de reverter, surpreendentes e não óbvias.
-- `docs/guidelines/` — diretrizes de engenharia numeradas (testes, design de interface, tratamento de erros, ...).
+- `docs/guidelines/` — diretrizes de engenharia numeradas.
 
 > **Todas essas skills são iniciadas pelo usuário.** Descrições como "use quando o usuário quiser..." descrevem *quando um humano deve invocar a skill* (ex: via `/tdd`, `/grill-me`) — nenhuma delas deve disparar autonomamente no meio de uma conversa sem ser explicitamente solicitada. Dito isso, o LLM pode sugerir proativamente uma dessas skills, e você pode continuar a sessão invocando-a.
 
@@ -13,7 +13,7 @@ Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo d
 
 | Skill | O que faz | Classificação |
 |---|---|---|
-| [`grill-me`](.claude/skills/grill-me/SKILL.md) | Interroga um plano de discovery ou de delivery uma pergunta por vez, cruzando com `CONTEXT.md`, ADRs e o código real, atualizando o glossário e os ADRs conforme as decisões se cristalizam. | HITL |
+| [`grill-me`](.claude/skills/grill-me/SKILL.md) | Interroga um plano de discovery ou de delivery uma pergunta por vez, cruzando com `GLOSSARY.md`, ADRs e o código real, atualizando o glossário e os ADRs conforme as decisões se cristalizam. | HITL |
 | [`to-epic`](.claude/skills/to-epic/SKILL.md) | Sintetiza o contexto da conversa atual em um documento de épico — **sem entrevistar**, apenas com o que já é conhecido. | AFK |
 | [`to-issues`](.claude/skills/to-issues/SKILL.md) | Deriva um épico em issues independentes, fatiadas verticalmente como tracer bullets, classifica cada uma como HITL/AFK, e itera a divisão com o usuário até ser aprovada. | HITL |
 | [`tdd`](.claude/skills/tdd/SKILL.md) | Conduz o desenvolvimento red-green-refactor: plano e design de interface são acordados com o usuário, depois os ciclos RED/GREEN/refactor rodam em subagents isolados com mutation testing manual obrigatório. | HITL / AFK |

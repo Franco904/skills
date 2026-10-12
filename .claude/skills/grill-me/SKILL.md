@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Sessão de interrogação (grilling) que testa um plano de discovery ou delivery sob pressão — confronta a proposta com o modelo de domínio existente, aprimora a terminologia e atualiza a documentação (CONTEXT.md; ADRs apenas em delivery) conforme as decisões se cristalizam. Use sempre que o usuário pedir para validar ou desafiar um épico, plano de pesquisa, síntese de discovery ou proposta de solução/implementação — mesmo sem usar essas palavras exatas.
+description: Sessão de interrogação (grilling) que testa um plano de discovery ou delivery sob pressão — confronta a proposta com o modelo de domínio existente, aprimora a terminologia e atualiza a documentação (GLOSSARY.md; ADRs apenas em delivery) conforme as decisões se cristalizam. Use sempre que o usuário pedir para validar ou desafiar um épico, plano de pesquisa, síntese de discovery ou proposta de solução/implementação — mesmo sem usar essas palavras exatas.
 ---
 
 <what-to-do>
@@ -21,7 +21,7 @@ Mapeamento de contexto(s) e ADRs:
 
 ```
 /
-├── CONTEXT.md
+├── GLOSSARY.md
 ├── docs/
 │   └── adr/
 │       ├── 0001-versaoficha-como-versao-contrato-canonica.md
@@ -29,7 +29,7 @@ Mapeamento de contexto(s) e ADRs:
 └── modules/
 ```
 
-Crie arquivos de forma preguiçosa — somente quando tiver algo a escrever. Se não existir um `CONTEXT.md`, crie um quando o primeiro termo for resolvido. Se não existir `docs/adr/`, crie quando o primeiro ADR for necessário.
+Crie arquivos de forma preguiçosa — somente quando tiver algo a escrever. Se não existir um `GLOSSARY.md`, crie um quando o primeiro termo for resolvido. Se não existir `docs/adr/`, crie quando o primeiro ADR for necessário.
 
 ## Contexto do plano
 
@@ -37,7 +37,7 @@ Esta skill opera em dois contextos distintos — adapte a linha de interrogaçã
 
 **Discovery** (o plano descreve um problema, uma hipótese de solução, achados de pesquisa ou decisões de delimitação de MVP):
 - Questione o enquadramento do problema: o problema está sendo descrito no vocabulário do domínio ou em jargão externo?
-- Confronte personas e dores com o que já está documentado no `CONTEXT.md`
+- Confronte personas e dores com o que já está documentado no `GLOSSARY.md`
 - Explore os limites do que entra e não entra no MVP proposto
 - Desafie suposições não validadas
 
@@ -50,7 +50,7 @@ Esta skill opera em dois contextos distintos — adapte a linha de interrogaçã
 ## Durante a sessão
 
 ### Confronte com o glossário
-Quando o usuário usar um termo que conflite com a linguagem ubíqua existente no `CONTEXT.md`, aponte imediatamente. "Seu glossário define 'cancelamento' como X, mas você parece querer dizer Y — qual é o correto?"
+Quando o usuário usar um termo que conflite com a linguagem ubíqua existente no `GLOSSARY.md`, aponte imediatamente. "Seu glossário define 'cancelamento' como X, mas você parece querer dizer Y — qual é o correto?"
 
 ### Afine a linguagem imprecisa
 Quando o usuário usar termos vagos, sinônimos ou ambíguos, proponha um termo canônico preciso. "Você está dizendo 'conta' — você quer dizer o Cliente ou o Usuário? São coisas diferentes."
@@ -64,10 +64,10 @@ Quando relações de domínio estiverem sendo discutidas, teste-as com cenários
 ### Cruze com o código
 Quando o usuário afirmar como algo funciona, verifique se o código concorda. Se encontrar uma contradição, traga à tona. "Seu código cancela Pedidos inteiros, mas você acabou de dizer que cancelamento parcial é possível — qual está certo?"
 
-### Atualize o CONTEXT.md de forma inline
-Quando um termo for resolvido, atualize o `CONTEXT.md` na hora. Não acumule essas atualizações — registre-as conforme acontecem. Use o formato em [CONTEXT-FORMAT.md](CONTEXT-FORMAT.md).
+### Atualize o GLOSSARY.md de forma inline
+Quando um termo for resolvido, atualize o `GLOSSARY.md` na hora. Não acumule essas atualizações — registre-as conforme acontecem. Use o formato em [GLOSSARY-FORMAT.md](GLOSSARY-FORMAT.md).
 
-O `CONTEXT.md` deve ser totalmente desprovido de detalhes de implementação. Não trate o `CONTEXT.md` como uma especificação, um rascunho ou um repositório para decisões de implementação. Ele é um glossário e nada mais.
+O `GLOSSARY.md` deve ser totalmente desprovido de detalhes de implementação. Não trate o `GLOSSARY.md` como uma especificação, um rascunho ou um repositório para decisões de implementação. Ele é um glossário e nada mais.
 
 ### Ofereça ADRs com parcimônia
 ADRs só existem em sessões de delivery — se a sessão for de discovery, pule esta subseção inteiramente.

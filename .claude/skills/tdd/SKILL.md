@@ -13,13 +13,13 @@ Diretrizes de testes a serem seguidas em GREEN presentes em @docs/guidelines/000
 
 ### 1. Planejamento (contexto principal)
 
-Ao explorar a base de código, use o glossário de domínio do projeto em @CONTEXT.md para que os nomes dos testes e o vocabulário da interface correspondam à linguagem do projeto, e respeite os ADRs – em `docs/adr` – na área que você está tocando.
+Ao explorar a base de código, use o glossário de domínio do projeto em @GLOSSARY.md para que os nomes dos testes e o vocabulário da interface correspondam à linguagem do projeto, e respeite os ADRs – em `docs/adr` – na área que você está tocando.
 
 Antes de escrever qualquer código:
 
 - [ ] Confirme com o usuário quais mudanças de interface são necessárias
 - [ ] Confirme com o usuário quais comportamentos testar (priorizar)
-- [ ] [Projete interfaces](../../docs/guidelines/0002-interface-design.md) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice** antes do primeiro teste
+- [ ] [Projete interfaces](../../../docs/guidelines/0002-interface-design.md) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice**, e escreva o [comentário de interface](../../../docs/guidelines/0004-comments.md#comentário-primeiro) antes do primeiro teste
 - [ ] Liste os comportamentos a testar (não etapas de implementação)
 - [ ] Obtenha aprovação do usuário sobre o plano
 
@@ -73,6 +73,7 @@ Após todos os testes passarem, delegue a refatoração a um subagente com:
   - **Métodos longos** → Dividir em auxiliares privados (manter testes na interface pública)
   - **Módulos rasos** → Combinar ou aprofundar
   - **Obsessão por primitivos** → Introduzir objetos de valor
+  - **Nome vago, sinônimo ou ambíguo** → Renomear ([0005](../../../docs/guidelines/0005-naming.md))
   - **Código existente** que o novo código revela como problemático; aplique princípios SOLID onde fizer sentido
 - Carregue /review-code para guiar o ciclo de feedback desta etapa
 
@@ -91,4 +92,5 @@ Execute os testes relevantes após cada etapa de refatoração. O subagente term
 [ ] Código é mínimo para este teste
 [ ] Nenhuma funcionalidade especulativa adicionada
 [ ] Teste mata os mutantes plausíveis do trecho (teste de mutação manual no GREEN)
+[ ] Diff passa no Teste da exclusão da 0004 (interface e implementação)
 ```
