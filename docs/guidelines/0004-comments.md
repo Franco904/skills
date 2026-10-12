@@ -6,7 +6,7 @@ Um comentário diz ao leitor o que o código não consegue dizer. O objetivo é 
 
 ## Nome antes de comentário
 
-A escada é: primeiro o nome, depois o comentário. Se o comentário só existe para explicar o que um identificador (variável, parâmetro, função, classe) significa, renomeie o identificador e remova o comentário. Quando o conceito é de domínio, o nome vem do `CONTEXT.md`. Isso evita ambiguidade, sinônimos e suposições do chamador. O comentário fica só com o que nenhum nome curto consegue carregar de maneira concisa e óbvia.
+A escada é: primeiro o nome, depois o comentário. Se o comentário só existe para explicar o que um identificador (variável, parâmetro, função, classe) significa, renomeie o identificador e remova o comentário. Quando o conceito é de domínio, o nome vem do `CONTEXT.md` (ver [0005](0005-naming.md)). Isso evita ambiguidade, sinônimos e suposições do chamador. O comentário fica só com o que nenhum nome curto consegue carregar de maneira concisa e óbvia.
 
 ```kotlin
 // RUIM: comentário compensa o nome
@@ -112,7 +112,7 @@ Escreva o comentário de interface junto com a assinatura, antes da implementaç
 | Outro gatilho sem comentário de interface ([Comentário de interface](#comentário-de-interface)) | `[should fix]` |
 | Contrato em comentário de implementação ([Comentário de implementação](#comentário-de-implementação)) | `[should fix]` |
 | Detalhe de implementação em comentário de interface ([Teste da exclusão](#teste-da-exclusão)) | `[should fix]` |
-| Nome ambíguo ou explicado por comentário ([Nome antes de comentário](#nome-antes-de-comentário)) | `[should fix]` |
+| Nome explicado por comentário ([Nome antes de comentário](#nome-antes-de-comentário)) | `[should fix]` |
 | TODO no diff ([Manutenção](#manutenção)) | `[should fix]` |
 | Explicação só no commit ou na PR ([Manutenção](#manutenção)) | `[should fix]` |
 | Comentário que repete a assinatura ou o código ([Teste da exclusão](#teste-da-exclusão)) | `[nitpick]` |
