@@ -26,13 +26,13 @@ suspend fun saveCidadao(cidadao: Cidadao)
 suspend fun getPessoaAtendimentos(pessoaId: Long): List<Atendimento>
 
 // BOM
-suspend fun saveCidadao(cidadao: Cidadao)
-suspend fun getCidadaoAtendimentos(cidadaoId: Long): List<Atendimento>
+suspend fun savePessoa(pessoa: Pessoa)
+suspend fun getPessoaAtendimentos(pessoaId: Long): List<Atendimento>
 ```
 
 ## Palavras extras
 
-Toda palavra do nome acrescenta informação.
+Toda palavra no nome acrescenta informação. Detalhes de mais são ruído para os chamadores.
 
 ```kotlin
 // RUIM
