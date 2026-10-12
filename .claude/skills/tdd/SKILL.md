@@ -73,6 +73,7 @@ Após todos os testes passarem, delegue a refatoração a um subagente com:
   - **Métodos longos** → Dividir em auxiliares privados (manter testes na interface pública)
   - **Módulos rasos** → Combinar ou aprofundar
   - **Obsessão por primitivos** → Introduzir objetos de valor
+  - **Nome vago, sinônimo ou ambíguo** → Renomear ([0005](../../../docs/guidelines/0005-naming.md))
   - **Código existente** que o novo código revela como problemático; aplique princípios SOLID onde fizer sentido
 - Carregue /review-code para guiar o ciclo de feedback desta etapa
 
