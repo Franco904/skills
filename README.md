@@ -5,7 +5,7 @@ Uma coleção de [Agent Skills](https://docs.claude.com/en/docs/claude-code/skil
 Todas as skills se ancoram em dois artefatos compartilhados, mantidos ao longo de todo o workflow:
 - `CONTEXT.md` — o glossário de linguagem ubíqua do projeto.
 - `docs/adr/` — Architecture Decision Records para decisões difíceis de reverter, surpreendentes e não óbvias.
-- `docs/guidelines/` — diretrizes de engenharia numeradas (testes, design de interface, tratamento de erros, ...).
+- `docs/guidelines/` — diretrizes de engenharia numeradas.
 
 > **Todas essas skills são iniciadas pelo usuário.** Descrições como "use quando o usuário quiser..." descrevem *quando um humano deve invocar a skill* (ex: via `/tdd`, `/grill-me`) — nenhuma delas deve disparar autonomamente no meio de uma conversa sem ser explicitamente solicitada. Dito isso, o LLM pode sugerir proativamente uma dessas skills, e você pode continuar a sessão invocando-a.
 
