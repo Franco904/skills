@@ -19,7 +19,7 @@ Antes de escrever qualquer código:
 
 - [ ] Confirme com o usuário quais mudanças de interface são necessárias
 - [ ] Confirme com o usuário quais comportamentos testar (priorizar)
-- [ ] [Projete interfaces](../../docs/guidelines/0002-interface-design.md) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice** antes do primeiro teste
+- [ ] [Projete interfaces](../../../docs/guidelines/0002-interface-design.md) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice**, e escreva o [comentário de interface](../../../docs/guidelines/0004-comments.md#comentário-primeiro) antes do primeiro teste
 - [ ] Liste os comportamentos a testar (não etapas de implementação)
 - [ ] Obtenha aprovação do usuário sobre o plano
 
@@ -91,4 +91,5 @@ Execute os testes relevantes após cada etapa de refatoração. O subagente term
 [ ] Código é mínimo para este teste
 [ ] Nenhuma funcionalidade especulativa adicionada
 [ ] Teste mata os mutantes plausíveis do trecho (teste de mutação manual no GREEN)
+[ ] Diff passa no Teste da exclusão da 0004 (interface e implementação)
 ```
