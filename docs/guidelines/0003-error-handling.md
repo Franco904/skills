@@ -30,7 +30,7 @@ O módulo detecta e trata a falha em nível baixo, sem expô-la ao chamador. É 
 
 - **(a) Promessa da interface cumprida**: depois do handler, o chamador recebe exatamente o que a interface prometeu (via retry, fallback para cache válido, recomputação, valor padrão previsto).
 - **(b) Falha observável**: a falha é registrada em log/telemetria, mesmo sem aparecer na assinatura.
-- **(c) Degradação declarada**: o comentário de **interface** (convenção de documentação da linguagem, ver [0004](0004-comments.md)) descreve quando e para quê o resultado degrada. Comentário de implementação não conta — o chamador não o enxerga.
+- **(c) Degradação declarada**: o comentário de **interface** (convenção de documentação da linguagem, ver [0004](0004-comments.md#comentário-de-interface)) descreve quando e para quê o resultado degrada. Comentário de implementação não conta — o chamador não o enxerga.
 
 ```kotlin
 /**
