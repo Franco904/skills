@@ -2,7 +2,7 @@
 
 De "A Philosophy of Software Design" (Ousterhout), capítulo 14 ("Choosing Names"):
 
-Um bom nome cria na mente do leitor uma imagem do que a entidade é. Um nome mal escolhido obriga o leitor a abrir a implementação ou o leva a supor errado. Quando o conceito é de domínio, o nome é o termo do `CONTEXT.md`. A escada nome → comentário está na [0004](0004-comments.md#nome-antes-de-comentário).
+Um bom nome cria na mente do leitor uma imagem do que a entidade é. Um nome mal escolhido obriga o leitor a abrir a implementação ou o leva a supor errado. Quando o conceito é de domínio, o nome é o termo do `GLOSSARY.md`. A escada nome → comentário está na [0004](0004-comments.md#nome-antes-de-comentário).
 
 ## Precisão
 
@@ -18,7 +18,7 @@ fun getSituacaoMapa(): SituacaoMapaReadModel
 
 ## Consistência
 
-Cada conceito tem um único nome, e cada nome tem um único conceito. Dois nomes para o mesmo conceito são **sinônimos**, e isso inclui um termo diferente do usado no `CONTEXT.md`. Um nome usado para dois conceitos é **ambíguo**.
+Cada conceito tem um único nome, e cada nome tem um único conceito. Dois nomes para o mesmo conceito são **sinônimos**, e isso inclui um termo diferente do usado no `GLOSSARY.md`. Um nome usado para dois conceitos é **ambíguo**.
 
 ```kotlin
 // RUIM: sinônimo, Pessoa e Cidadão para o mesmo conceito

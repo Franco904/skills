@@ -126,7 +126,7 @@ Faça o prompt de cada subagente com um resumo técnico separado (caminhos de ar
 - Agente 3: "Otimize para o chamador mais comum — torne o caso default trivial."
 - Agente 4 (se aplicável): "Projete favorecendo inversão de dependências para dependências cross-seam."
 
-Inclua o vocabulário do @CONTEXT.md no resumo, para que cada subagente nomeie as coisas de forma consistente com a linguagem ubíqua do projeto.
+Inclua o vocabulário do @GLOSSARY.md no resumo, para que cada subagente nomeie as coisas de forma consistente com a linguagem ubíqua do projeto.
 
 Cada subagente produz como saída:
 

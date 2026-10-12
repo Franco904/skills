@@ -1,4 +1,4 @@
-# Formato do CONTEXT.md
+# Formato do GLOSSARY.md
 
 ## Estrutura
 
@@ -33,4 +33,4 @@ _Evitar_: Comprador, Conta, Perfil
 
 ## Localização
 
-Um `CONTEXT.md` na raiz do repositório.
+Um `GLOSSARY.md` na raiz do repositório.

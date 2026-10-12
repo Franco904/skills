@@ -58,7 +58,7 @@ Todo comentário deve iniciar com uma das etiquetas abaixo, em negrito:
 
 ↳ *Por quê:* <explicação do impacto ou risco>
 ↳ *Sugestão:* <alternativa concreta ou exemplo de código>
-↳ *Referência:* <critério de aceitação #N, glossário (`CONTEXT.md`), diretriz #N (`docs/guidelines/`), ADR (`docs/adr/`) ou documentação relevante> (quando aplicável)
+↳ *Referência:* <critério de aceitação #N, glossário (`GLOSSARY.md`), diretriz #N (`docs/guidelines/`), ADR (`docs/adr/`) ou documentação relevante> (quando aplicável)
 ```
 
 Ver [REFERENCE.md](REFERENCE.md) para definições detalhadas de cada etiqueta.

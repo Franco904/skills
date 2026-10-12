@@ -13,7 +13,7 @@ Diretrizes de testes a serem seguidas em GREEN presentes em @docs/guidelines/000
 
 ### 1. Planejamento (contexto principal)
 
-Ao explorar a base de código, use o glossário de domínio do projeto em @CONTEXT.md para que os nomes dos testes e o vocabulário da interface correspondam à linguagem do projeto, e respeite os ADRs – em `docs/adr` – na área que você está tocando.
+Ao explorar a base de código, use o glossário de domínio do projeto em @GLOSSARY.md para que os nomes dos testes e o vocabulário da interface correspondam à linguagem do projeto, e respeite os ADRs – em `docs/adr` – na área que você está tocando.
 
 Antes de escrever qualquer código:
 
