@@ -4,7 +4,7 @@ De "A Philosophy of Software Design" (Ousterhout):
 
 Projete **módulos profundos**: encapsule bastante comportamento por trás de uma interface pequena e posicionada em um ponto de injeção claro. O comportamento complexo deve ser testável através dessa interface. Use os princípios descritos sempre que o código estiver sendo projetado ou reestruturado. O objetivo é elevar: capacidade por unidade para os chamadores, concentração de mudanças para os mantenedores e testabilidade para ambos.
 
-> Não confundir "interface" com a palavra-chave `interface` de uma linguagem específica: muito restrito — interface aqui é uma superfície de contato que inclui todos os fatos que um chamador precisa saber para usar o módulo, sem precisar olhar a implementação: assinatura dos métodos públicos, efeitos colaterais, exceções possíveis e invariantes (ex: "esse método é idempotente", "essa chamada é thread-safe").
+> Não confundir "interface" com a palavra-chave `interface` de uma linguagem específica: muito restrito — interface aqui é uma superfície de contato que inclui todos os fatos que um chamador precisa saber para usar o módulo, sem precisar olhar a implementação: assinatura dos métodos públicos, efeitos colaterais, exceções possíveis e garantias (ex: "esse método é idempotente", "essa chamada é thread-safe").
 
 ## Deep Modules x Shallow Modules
 
