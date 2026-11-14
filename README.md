@@ -68,7 +68,7 @@ Considerações:
 
 ## Instalação (por projeto)
 
-1. **Registrar o marketplace**, uma vez por quem configura o projeto:
+1. **Registrar o marketplace**:
 
 ```bash
 claude plugin marketplace add Franco904/skills --scope project
@@ -76,7 +76,7 @@ claude plugin marketplace add Franco904/skills --scope project
 
 Commite o `.claude/settings.json` gerado. Ele registra o marketplace para quem confiar na pasta, mas **não instala o plugin**.
 
-2. **Instalar o plugin**, uma vez por dev (inclusive quem configurou), depois de confiar na pasta do projeto:
+2. **Instalar o plugin**, depois de confiar na pasta do projeto:
 
 ```bash
 claude plugin install fst@skills --scope project
