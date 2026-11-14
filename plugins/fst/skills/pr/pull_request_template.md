@@ -1,39 +1,25 @@
 - closes #xyz
 - fixes #xyz
 
-## 1. Análise de Impactos
+## Descrição
 
-Este PR altera algum módulo compartilhado ou estabilizado?  
+Resuma o que foi implementado ou corrigido. Inclua o motivo se for relevante.
 
-<details>
-<summary>Exemplos</summary>
-</br>
-  
-1. Widget/componente compartilhado
-2. Tema global / estilos compartilhados
-3. Arquivos do módulo comum / utilitários compartilhados
-4. Classe, serviço ou helper usado por múltiplos módulos
-5. Navegação / rotas compartilhadas
-6. Estado global / providers / stores / controllers compartilhados
-7. Estrutura de banco / migrations / queries
-8. Contrato de API / serialização / parsing
-9. Permissões / autenticação / sessão
+## Escopo
 
-Obs.: Qualquer definição de arquitetura ou arquivo em comum que possa impactar outras partes do aplicativo deve ser considerada. 
+1. **Este PR contém alguma alteração além do escopo previsto nos critérios de aceite da tarefa?** 
+2. **Este PR altera alguma parte do código que outra equipe esteja trabalhando?**
 
-</details>
+**Caso a resposta seja sim para algum dos itens, informe:**
+- [ ] 1. **Qual item/arquivo precisou ser alterado?** 
+- [ ] 2. **Quais alterações foram necessárias?**
+- [ ] 3. **Por que foi necessário realizar essa alteração?**
 
-**Se sim, informe:**
-- [ ] 1. Quais alterações foram necessárias?
-- [ ] 2. Por que foi necessário realizar essa alteração?
-- [ ] 3. A solução adotada foi resultado de uma troca real? 
+## Orientações para revisão
 
-## 2. Orientações para Review
+Informe aqui qualquer ponto que mereça atenção extra durante a revisão. 
 
-Informe aqui qualquer ponto que mereça atenção extra durante a revisão.</br>
-Caso algum item além dos critérios de aceite da tarefa tenha sido alterado, isso deve ser sinalizado aqui. Seja conciso na descrição.
+## Orientações para QA
 
-## 3. Orientações para QA
+Informe aqui qualquer ponto que mereça atenção extra durante o teste.
 
-Informe aqui qualquer ponto que mereça atenção extra durante o teste.</br>
-Caso algum item além dos critérios de aceite da tarefa tenha sido alterado, isso deve ser sinalizado aqui.
