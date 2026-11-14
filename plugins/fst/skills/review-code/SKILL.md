@@ -1,6 +1,7 @@
 ---
 name: review-code
 description: Revisar código como arquiteto sênior seguindo as diretrizes do projeto
+argument-hint: "[fixed-point: referência git (SHA, branch, tag) base do diff; omita para revisar o trabalho não commitado]"
 ---
 
 Você é um **arquiteto de software sênior** revisando código produzido por um **programador júnior** neste projeto.
@@ -19,7 +20,9 @@ Sua responsabilidade é dupla:
 
 ### 1. Resolver o diff
 
-O que o usuário especificar é o **fixed point**, seja o que for — commit SHA, branch name, tag, `main`, `HEAD~5`, etc. Se ele não especificou um, pergunte qual é.
+O **fixed point** é a ref git contra a qual o diff é calculado: tudo o que mudou desde ela é o que será revisado. Pode ser qualquer ref — commit SHA, branch name, tag, `develop`, `HEAD~5`, etc.
+
+#### Com fixed point explícito
 
 ```bash
 # 1. Confirmar que o fixed point resolve
@@ -32,13 +35,26 @@ git diff <fixed-point>...HEAD --name-only
 git log <fixed-point>..HEAD --oneline
 ```
 
-Ref inválida ou diff vazio devem falhar aqui — não dentro de sub-agents paralelos.
+#### Sem fixed point (fallback: trabalho não commitado)
 
-**Aplicação seletiva das diretrizes de teste** com base nos arquivos presentes no diff:
+Não pergunte qual é. Revise as mudanças ainda não commitadas — rastreadas e novas:
 
-| Diretriz | Aplicar se o diff contiver |
-|---|---|
-| `0001-tests` | Arquivos de teste adicionados/modificados |
+```bash
+# Arquivos rastreados alterados (staged + unstaged) e conteúdo do diff
+git diff HEAD --name-only
+git diff HEAD
+
+# Arquivos novos ainda não rastreados (leia o conteúdo diretamente)
+git ls-files --others --exclude-standard
+```
+
+Os dois comandos de lista juntos formam o conjunto de arquivos do diff.
+
+Ref inválida ou diff vazio (no fallback: ambas as listas vazias) devem falhar aqui — não dentro de sub-agents paralelos.
+
+**Diretrizes aplicadas sempre:** toda diretriz de `docs/guidelines/` cujo nome **não** termina em `-tests` (ex.: `NNNN-naming`) é lida e usada como critério em todo review. Liste o diretório em vez de confiar nesta lista. Diretriz sem relação com o diff (ex.: tratamento de erros num diff só de layout) simplesmente não gera comentário.
+
+**Aplicação seletiva das diretrizes de teste** (`*-tests`): cada uma declara em `## Escopo` os arquivos a que se aplica (diretórios, padrões de nome, tipo de teste). Aplique a diretriz apenas se o diff contiver arquivos cobertos por esse Escopo. a diretriz de slug `all-tests` vale sempre que qualquer outra diretriz `*-tests` se aplicar.
 
 ### 2. Classificar por severidade
 
@@ -67,11 +83,11 @@ Ver [REFERENCE.md](REFERENCE.md) para definições detalhadas de cada etiqueta.
 
 ### 3. Classificar por revisão no GitHub
 
-| Ação GitHub | Quando usar |
-|---|---|
-| **Request changes** | Existe ao menos 1 `[must fix]` |
-| **Comment** | Apenas `[should fix]`/`[nitpick]` sem consenso fechado, **ou** ao menos 1 `[question]` pendente |
-| **Approve** | Todos os `[must fix]` e `[question]` resolvidos; `[should fix]` e `[nitpick]` com consenso fechado com o Tech Lead |
+| Ação GitHub         | Quando usar                                                                                                        |
+|---------------------|--------------------------------------------------------------------------------------------------------------------|
+| **Request changes** | Existe ao menos 1 `[must fix]`                                                                                     |
+| **Comment**         | Apenas `[should fix]`/`[nitpick]` sem consenso fechado, **ou** ao menos 1 `[question]` pendente                    |
+| **Approve**         | Todos os `[must fix]` e `[question]` resolvidos; `[should fix]` e `[nitpick]` com consenso fechado com o Tech Lead |
 
 **Fluxo após correção:**
 - `[must fix]` corrigido → revisão e teste devem ser executados novamente.
