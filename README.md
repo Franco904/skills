@@ -68,16 +68,15 @@ Considerações:
 
 ## Instalação (por projeto)
 
-Primeira adoção, feita uma vez por quem configura o projeto:
+1. **Registrar o marketplace**, uma vez por quem configura o projeto:
 
 ```bash
 claude plugin marketplace add Franco904/skills --scope project
-claude plugin install fst@skills --scope project
 ```
 
 Commite o `.claude/settings.json` gerado. Ele registra o marketplace para quem confiar na pasta, mas **não instala o plugin**.
 
-Cada dev precisa rodar **uma vez**, depois de confiar na pasta do projeto:
+2. **Instalar o plugin**, uma vez por dev (inclusive quem configurou), depois de confiar na pasta do projeto:
 
 ```bash
 claude plugin install fst@skills --scope project
@@ -108,13 +107,14 @@ As skills assumem que o projeto consumidor tem os seguintes artefatos para harne
 
 As skills identificam uma diretriz pelo **slug**, nunca pelo número: o prefixo `NNNN` é livre e só ordena. A skill localiza o arquivo por glob (`docs/guidelines/*-<slug>.md`) e ignora em silêncio a diretriz que não existir.
 
-| Slug | Usado por | Observação |
-|---|---|---|
-| `*-tests` | `tdd`, `review-code` | Diretrizes de teste (ex.: `all-tests`, `unit-tests`); cada uma declara `## Escopo` |
-| `interface-design` | `tdd` | Design de interfaces (+ Design It Twice) |
-| `comments` | `tdd` | Comentários; deve ter a seção "Comentário primeiro" |
-| `naming` | `tdd` | Nomenclatura |
+| Slug               | Usado por            | Observação                                           |
+|--------------------|----------------------|------------------------------------------------------|
+| `*-tests`          | `tdd`, `review-code` | Diretrizes de teste (ex.: `all-tests`, `unit-tests`) |
+| `interface-design` | `tdd`                | Design de interfaces (+ Design It Twice)             |
+| `comments`         | `tdd`                | Comentários                                          |
+| `naming`           | `tdd`                | Nomenclatura                                         |
 
 Regras:
 - Toda diretriz de teste (`*-tests`) declara em `## Escopo` os arquivos a que se aplica; `review-code` só a aplica se o diff tocar esse Escopo.
+- A diretriz `comments` deve ter a seção "Comentário primeiro"; `tdd` a usa para projetar as interfaces públicas.
 - No `review-code`, toda diretriz que **não** termina em `-tests` (inclusive as de slug livre, como arquitetura) é critério de todo review.
