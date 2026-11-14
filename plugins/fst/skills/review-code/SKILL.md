@@ -54,7 +54,7 @@ Ref inválida ou diff vazio (no fallback: ambas as listas vazias) devem falhar a
 
 **Diretrizes aplicadas sempre:** toda diretriz de `docs/guidelines/` cujo nome **não** termina em `-tests` (ex.: `NNNN-naming`) é lida e usada como critério em todo review. Liste o diretório em vez de confiar nesta lista. Diretriz sem relação com o diff (ex.: tratamento de erros num diff só de layout) simplesmente não gera comentário.
 
-**Aplicação seletiva das diretrizes de teste** (`*-tests`): cada uma declara em `## Escopo` os arquivos a que se aplica (diretórios, padrões de nome, tipo de teste). Aplique a diretriz apenas se o diff contiver arquivos cobertos por esse Escopo. a diretriz de slug `all-tests` vale sempre que qualquer outra diretriz `*-tests` se aplicar.
+**Aplicação seletiva das diretrizes de teste** (`*-tests`): cada uma declara em `## Escopo` os arquivos a que se aplica (diretórios, padrões de nome, tipo de teste). Aplique a diretriz apenas se o diff contiver arquivos cobertos por esse Escopo.
 
 ### 2. Classificar por severidade
 

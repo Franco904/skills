@@ -7,9 +7,9 @@ description: Desenvolvimento orientado a testes com o ciclo red-green-refactor. 
 
 Filosofia e anti-padrões: ver [REFERENCE.md](REFERENCE.md).
 
-Diretrizes de testes, lidas uma vez no início do primeiro RED: em `docs/guidelines/`, as de slug `all-tests` (`NNNN-all-tests.md`) e as do tipo de teste a escrever — `unit-tests`, `integration-tests` ou `presentation-tests`. Localize por glob (`*-<slug>.md`), nunca pelo número; diretriz ausente é ignorada em silêncio.
+Diretrizes de testes, lidas uma vez no início do primeiro RED: toda diretriz `*-tests` de `docs/guidelines/` (glob `*-tests.md`) cujo `## Escopo` cubra o teste a escrever. Localize por glob, nunca pelo número; sem nenhuma, siga o padrão do projeto.
 
-Fluxo: planejamento interativo (§1) → execução AFK (§2–§6). Todo o trabalho roda no contexto principal, que carrega glossário, ADRs e diretrizes e projeta a interface pública com esse contexto inteiro. O único subagente é a revisão independente (§3).
+> **Resumo do processo**: planejamento interativo (§1) → execução AFK (§2–§6). Todo o trabalho roda no contexto principal, que carrega glossário, ADRs e diretrizes e projeta a interface pública com esse contexto inteiro. O único subagente é a revisão independente (§3).
 
 ## Processo
 
