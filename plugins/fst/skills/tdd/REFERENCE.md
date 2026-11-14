@@ -37,7 +37,7 @@ CERTO (vertical):
 
 ---
 
-## Teste de Mutação Manual em GREEN
+## Teste de Mutação Manual após o REFACTOR
 
 Um teste verde não prova que o teste verifica algo — só prova que ele não quebrou com a implementação atual. O teste de mutação manual fecha essa lacuna: estraga a implementação de propósito e confirma que o teste percebe.
 
@@ -49,4 +49,4 @@ Um teste verde não prova que o teste verifica algo — só prova que ele não q
 
 **Ciclo por mutante:** mutar → rodar teste → confirmar falha (mutante morto) → reverter → confirmar volta ao verde. Nunca deixe uma mutação no código entre um teste e outro — se o agente for interrompido no meio, o código de produção fica quebrado sem ninguém perceber.
 
-**Mutante sobrevivente (teste passa mesmo mutado) é sinal de teste fraco**, não de "mutação irrelevante" — antes de descartar, pergunte: essa mutação muda comportamento observável pela interface pública? Se sim, o teste precisa de uma asserção mais específica e precisa (ex: trocar `expect(x > -1, isTrue)` por `expect(indiceEsperado, x)`).
+**Mutante sobrevivente (teste passa mesmo mutado) é sinal de teste fraco**, não de "mutação irrelevante" — antes de descartar, pergunte: essa mutação muda comportamento observável pela interface pública? Se sim, o teste precisa de uma asserção mais específica e precisa (ex: trocar `assertTrue(x > -1)` por `assertEquals(indiceEsperado, x)`).
