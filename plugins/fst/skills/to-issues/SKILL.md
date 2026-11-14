@@ -1,13 +1,13 @@
 ---
 name: to-issues
-description: Deriva um épico em issues independentes no issue tracker usando fatias verticais (tracer bullets). Use quando o usuário quiser converter um épico em issues, criar tickets de implementação, ou decompor o trabalho em histórias de usuário e tarefas.
+description: Deriva um épico em issues independentes no GitHub usando fatias verticais (tracer bullets). Use quando o usuário quiser converter um épico em issues, criar issues de implementação, ou decompor o trabalho em histórias de usuário e tarefas.
 ---
 
 ## Processo
 
 ### 1. Coletar contexto
 
-Trabalhe a partir do que já está no contexto da conversa. Se o usuário passar uma referência de issue (número, URL ou caminho) como argumento, busque-a no issue tracker e leia o corpo completo e os comentários.
+Trabalhe a partir do que já está no contexto da conversa. Se o usuário passar uma referência de issue (número, URL ou caminho) como argumento, busque-a no GitHub e leia o corpo completo e os comentários.
 
 ### 2. Explorar a base de código (opcional)
 
@@ -15,7 +15,7 @@ Se você ainda não explorou a base de código, faça isso para entender o estad
 
 ### 3. Rascunhar as fatias verticais
 
-Decomponha o épico em issues do tipo **tracer bullet**. Cada issue é uma fatia vertical fina que corta e "ilumina" TODAS as camadas de integração de ponta a ponta (ex.: apresentação → casos de uso → lógica de negócio → dados) — NÃO uma fatia horizontal de uma única camada.
+Decomponha o épico em issues do tipo **tracer bullet**. Cada issue é uma fatia vertical fina que corta e "ilumina" TODAS as camadas de integração de ponta a ponta (ex.: presentation, domain, data, external) — NÃO uma fatia horizontal de uma única camada.
 
 As issues podem ser classificadas como **HITL** (*Human In The Loop*) ou **AFK** (*Away From Keyboard*). Issues HITL requerem interação humana, como uma decisão arquitetural ou uma revisão de design. Issues AFK podem ser implementadas e mergeadas sem interação humana. Prefira AFK sempre que possível.
 
@@ -53,7 +53,7 @@ Itere até o usuário aprovar a decomposição.
 
 Para cada fatia aprovada, crie um novo arquivo .md na raiz do repositório em `issues/`. Use o template de issue abaixo. Organize as issues em ordem de dependência (bloqueadoras primeiro), para que você possa referenciar identificadores reais no campo "Dependências".
 
-NÃO feche nem modifique a issue pai (épico). Também não inclua a seção "Épico pai", essa ligação será feita manualmente pelo(a) PO no issue tracker depois.
+NÃO feche nem modifique a issue pai (épico). Também não inclua a seção "Épico pai", essa ligação será feita manualmente pelo(a) PO no GitHub depois.
 
 ---
 
