@@ -1,6 +1,6 @@
 ---
 name: teach
-description: Ensina ao usuário uma nova habilidade ou conceito, within this workspace.
+description: Ensina ao usuário uma nova habilidade ou conceito.
 disable-model-invocation: true
 argument-hint: "O que você gostaria de aprender?"
 ---
