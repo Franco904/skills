@@ -1,0 +1,14 @@
+{
+  "name": "skills",
+  "description": "Skills de IA de Franco904 para workflow de entrega de software orientado a domínio",
+  "owner": {
+    "name": "Franco904"
+  },
+  "plugins": [
+    {
+      "name": "fst",
+      "source": "./plugins/fst",
+      "description": "Pacote de skills de fluxo de trabalho com IA: grill-me, to-epic, to-issues, tdd, pr, review-code, e mais"
+    }
+  ]
+}
