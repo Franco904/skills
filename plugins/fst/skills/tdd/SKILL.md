@@ -15,25 +15,16 @@ Diretrizes de testes, lidas uma vez no início do primeiro RED: toda diretriz `*
 
 ### 1. Planejamento (interativo)
 
-Ao explorar a base de código, use o glossário de domínio do projeto em @GLOSSARY.md para que os nomes dos testes e o vocabulário da interface correspondam à linguagem do projeto, e respeite os ADRs – em `docs/adr` – na área que você está tocando.
+**1.1 Grilling.** Invoque `/grill-me` (modo delivery) sobre a issue, com esta pauta: levantar quais mudanças de interface são necessárias (o quê, não o desenho, que vem na §1.2), comportamentos a testar em ordem de prioridade e o que fica de fora. Ele carrega glossário e ADRs e os atualiza conforme as decisões se fecham.
 
-Antes de escrever qualquer código:
+**Você não pode testar tudo.** Concentre o esforço de teste em caminhos críticos e lógica complexa, não em todos os casos extremos possíveis.
 
-- [ ] Confirme com o usuário quais mudanças de interface são necessárias
-- [ ] Confirme com o usuário quais comportamentos testar (priorizar)
-- [ ] Projete interfaces (diretriz `interface-design` em `docs/guidelines/`, se existir) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice**, e escreva o comentário de interface (diretriz `comments`, seção "Comentário primeiro", se existir) antes do primeiro teste
-- [ ] Liste os comportamentos a testar (não etapas de implementação)
-- [ ] Obtenha aprovação do usuário sobre o plano
+**1.2 Projeto da interface.** Com o plano do grilling, antes de escrever qualquer código:
 
-Se julgar necessário, pergunte: "Como deve ser a interface pública? Quais comportamentos são mais importantes de testar?"
-
-**Plano:**
-
-- Faça do plano algo extremamente conciso. Priorize concisão em detrimento de gramática.
-- Ao final, tenha um olhar crítico. Procure por eventuais inconsistências no plano e identifique complexidades acidentais, sinalizando-as ao usuário para tomada de decisão.
-- Também sinalize quaisquer questões não respondidas para o usuário responder, se houver.
-
-**Você não pode testar tudo.** Confirme com o usuário exatamente quais comportamentos são mais importantes. Concentre o esforço de teste em caminhos críticos e lógica complexa, não em todos os casos extremos possíveis.
+- [ ] Projete interfaces (diretriz `interface-design` em `docs/guidelines/`, se existir) visando legibilidade, manutenibilidade e testabilidade — para interfaces não-triviais (novo ponto de injeção, dependência cross-seam, módulo novo), aplique **Design It Twice**
+- [ ] Escreva o comentário de interface (diretriz `comments`, seção "Comentário primeiro", se existir) antes do primeiro teste
+- [ ] Liste os comportamentos a testar (não etapas de implementação), com nomes na linguagem do `GLOSSARY.md`
+- [ ] Obtenha uma única aprovação do usuário sobre o plano (interface projetada + comportamentos). Perguntas que bloqueiam o plano são respondidas antes dela; as não bloqueantes seguem como pendências (§6)
 
 **Aprovado o plano, o fluxo é AFK:** não consulte o usuário até a mensagem final (§6). Decisões em aberto viram pendências naquela mensagem.
 
