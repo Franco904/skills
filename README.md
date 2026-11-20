@@ -13,7 +13,7 @@ Marketplace `skills` com um plugin, `fst`. Os comandos levam o nome do plugin co
 | `/fst:to-epic`            | Sintetiza o contexto da conversa em um épico, sem entrevistar o usuário                                                                                 | AFK           |
 | `/fst:to-issues`          | Deriva o épico em issues GitHub por fatias verticais (_tracer bullets_)                                                                                 | HITL          |
 | `/fst:wayfinder`          | Gera um mapa de issues GitHub para um trabalho maior que 1 sessão (para tarefas de 1 sessão, use grill-me)                                              | HITL / AFK    |
-| `/fst:tdd`                | Implementa uma issue seguindo TDD (Red-green-refactor)                                                                                                  | HITL / AFK    |
+| `/fst:tdd`                | Implementa uma issue com TDD (Red-green-refactor), com grilling inicial para aprovação do plano                                                         | HITL / AFK    |
 | `/fst:pr`                 | Gera um corpo de PR seguindo o template do projeto, com plano de QA ponta-a-ponta para o diff informado ou calculado                                    | AFK           |
 | `/fst:review-code`        | Revisa o código do diff como arquiteto sênior, referenciando CAs da issue e as diretrizes do projeto                                                    | AFK           |
 | `/fst:handoff`            | Compacta a conversa em documento de handoff para outro agente continuar (evita alucinações)                                                             | AFK           |
@@ -40,8 +40,7 @@ flowchart LR
     B --> C["/to-epic"]
     C --> D["/to-issues"]
     W --> C
-    D --> E["/grill-me (delivery)"]
-    E --> G["/tdd"]
+    D --> G["/tdd"]
     G --> I["/review-code"]
     I --> J["/pr"]
     J --> K[Merge]
@@ -52,9 +51,8 @@ flowchart LR
 
 1. **Discovery**: desafie o framing do problema e os limites do MVP. Quando pesquisa, grilling e prototipagem cabem todos em uma sessão (ou em uma cadeia curta delas), conduza com `grill-me`, recorrendo a `prototype` sempre que uma questão de design precisar de um artefato concreto para reagir — cada sessão retoma a anterior através de um `HANDOFF.md` gerado por `/handoff`. Quando o esforço é grande demais para isso — mais decisões em aberto do que uma sessão ou uma cadeia curta de handoffs comporta — conduza o discovery com `wayfinder` em vez disso: ele mapeia as decisões como um mapa compartilhado de issues (tipadas como `research`, `prototype`, `grilling`, ou `task`) no issue-tracker e os resolve um de cada vez, com segurança entre sessões concorrentes. De qualquer forma, atualize o glossário do projeto com nova terminologia de domínio conforme as decisões se fecham, e depois sintetize o escopo acordado em um épico com `to-epic`.
 2. **Decomposição**: quebre o épico em issues independentes, fatiadas verticalmente com `to-issues`.
-3. **Planejamento de entrega**: antes de tocar em código para uma dada issue, rode `grill-me` novamente (modo entrega) para testar a resistência do plano técnico contra os ADRs e as convenções de nomenclatura.
-4. **Implementação**: construa o comportamento test-first com `tdd` (red-green-refactor + testes de mutação).
-5. **Review e entrega**: obtenha uma passada em nível sênior com `review-code`, depois gere o corpo do PR (descrição, escopo, orientações de revisão e plano de QA) com `pr`.
+3. **Implementação**: construa o comportamento test-first com `tdd`. Ele abre com um grilling de entrega (`grill-me`, modo delivery) que tensiona o plano técnico contra os ADRs e as convenções de nomenclatura, projeta a interface e segue com red-green-refactor + testes de mutação.
+4. **Review e entrega**: obtenha uma passada em nível sênior com `review-code`, depois gere o corpo do PR (descrição, escopo, orientações de revisão e plano de QA) com `pr`.
 
 Considerações:
 
